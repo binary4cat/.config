@@ -5,12 +5,9 @@ export PATH=$PATH:$LOCALBIN
 export LOCALPROG=$HOME/prog
 
 # golang
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn,direct
 export GOPRIVATE=devgit.starschina.com/*
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export PATH=$PATH:$HOME/.gem/ruby/2.6.0
 export PATH=$PATH:/usr/local/bin

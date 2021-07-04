@@ -152,6 +152,12 @@ noremap <silent> <LEADER>o za
 "******************************************
 " Cursor Movement
 "******************************************
+" insert model move cursor
+inoremap <C-h> <right>
+inoremap <C-j> <down>
+inoremap <C-k> <up>
+inoremap <C-l> <left>
+
 " U/E keys for 5 times u/e (faster navigation)
 noremap <silent> K 5k
 noremap <silent> J 5j
