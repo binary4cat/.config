@@ -1,14 +1,14 @@
-source ~/.config/zsh/env.zsh
-source ~/.config/zsh/aliases.zsh
-source ~/.config/zsh/plugins.zsh
-source ~/.config/zsh/vi.zsh
-source ~/.config/zsh/fzf.zsh
-source ~/.config/zsh/mappings.zsh
-source ~/.config/zsh/config.zsh
+source $HOME/.config/zsh/env.zsh
+source $HOME/.config/zsh/aliases.zsh
+source $HOME/.config/zsh/plugins.zsh
+source $HOME/.config/zsh/vi.zsh
+source $HOME/.config/zsh/fzf.zsh
+source $HOME/.config/zsh/mappings.zsh
+source $HOME/.config/zsh/config.zsh
 
 
-source ~/.config/.zsh-autopair/autopair.zsh
+source $HOME/.config/.zsh-autopair/autopair.zsh
 autopair-init
-source ~/.config/.zim/init.zsh
-source ~/.config/.zim/modules/fzf-tab/fzf-tab.plugin.zsh
+source $HOME/.zim/init.zsh
+source $HOME/.zim/modules/fzf-tab/fzf-tab.plugin.zsh
 

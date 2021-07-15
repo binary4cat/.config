@@ -31,3 +31,4 @@ ranger/__pycache__/commands.cpython-39.opt-1.pyc
 !.p10k.zsh
 !README.md
 !.gitignore
+!initialize.sh
