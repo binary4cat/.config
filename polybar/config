@@ -73,7 +73,7 @@ tray-position = left
 ;modules-right = network layout temperature memory memoryswap cpu battery brightness sound wifi powermenu
 modules-left = workspaces settings spotify spotify-prev spotify-play-pause spotify-next
 modules-center = date
-modules-right = network temperature memory cpu battery sound wifi powermenu
+modules-right = bluetooth temperature memory cpu battery sound wifi powermenu
 
 
 ;Date correction
@@ -446,3 +446,13 @@ ramp-3 = 
 ramp-4 = 
 ramp-font = 7
 ramp-foreground = ${colors.menucol-deepblue}
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/scripts/bluetooth/bluetooth.sh
+interval = 2
+click-left = exec blueberry
+click-right = exec ~/.config/polybar/scripts/bluetooth/toggle_bluetooth.sh
+format-padding = 1
+format-background = #000000
+format-foreground = #ffffff
