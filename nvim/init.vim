@@ -352,6 +352,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'kevinhwang91/rnvimr'
 Plug 'airblade/vim-rooter'
 Plug 'pechorin/any-jump.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 
 " Taglist
 Plug 'liuchengxu/vista.vim'
@@ -572,6 +574,7 @@ nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 " coc.nvim
 "******************************************
 let g:coc_global_extensions = [
+	\ 'coc-marketplace',
 	\ 'coc-css',
 	\ 'coc-diagnostic',
 	\ 'coc-docker',
