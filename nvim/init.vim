@@ -604,6 +604,7 @@ let g:coc_global_extensions = [
 	\ 'coc-vimlsp',
 	\ 'coc-yaml',
 	\ 'coc-yank',
+  \ 'coc-git',
 	\ 'https://github.com/rodrigore/coc-tailwind-intellisense']
 
 function! s:check_back_space() abort
