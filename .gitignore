@@ -15,6 +15,9 @@
 !/nvim/
 /nvim/plugged/*
 /nvim/tmp/
+!/nvim.bak
+/nvim.bak/tmp/
+!/lvim
 !/polybar/
 !/ranger/
 ranger/plugins/__pycache__/*
