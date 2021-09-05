@@ -4,5 +4,8 @@ wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh
 # get my .config
 git clone https://github.com/hjdo/.config.git $HOME/.config
 # link zshrc config file
+rm $HOME/.zshrc $HOME/.zimrc
 ln -s $HOME/.config/zsh/zshrc $HOME/.zshrc
 ln -s $HOME/.config/zsh/zimrc $HOME/.zimrc
+# install plugin
+zimfw install
