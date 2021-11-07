@@ -35,3 +35,7 @@ ranger/__pycache__/commands.cpython-39.opt-1.pyc
 !README.md
 !.gitignore
 !initialize.sh
+!/wallpaper/
+!/scripts/
+!/.screenlayout/
+!/alacritty/
