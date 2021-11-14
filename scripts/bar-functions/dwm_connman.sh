@@ -6,6 +6,29 @@
 
 # Dependencies: connman
 
+bit_format(){
+    echo "before $T1 $R1"
+    if [ -z "$T1" ]; then
+        T1=0
+    fi
+    if [ -z "$R1" ]; then
+        R1=0
+    fi
+
+    R2=`cat /sys/class/net/wlan0/statistics/rx_bytes`
+    T2=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+    TBPS=`expr $T2 - $T1`
+    RBPS=`expr $R2 - $R1`
+    TKBPS=`expr $TBPS / 1024`
+    RKBPS=`expr $RBPS / 1024`
+    # printf "In: %12i KB/s | Out: %12i KB/s | Total: %12i KB/s\n" $(($INSPEED/1024)) $(($OUTSPEED/1024)) $((($INSPEED+$OUTSPEED)/1024)) ;
+    printf "In: %i KB/s | Out: %i KB/s" $RKBPS $TKBPS
+
+    R1=$R2
+    T1=$T2
+    echo "$R1" "$T1"
+}
+
 dwm_connman () {
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
@@ -36,6 +59,7 @@ dwm_connman () {
     if [ "$STRENGTH" ]; then
         # printf "%s %s %s%%" "$IP" "$CONNAME" "$STRENGTH"
         printf "%s %s%%" "$CONNAME" "$STRENGTH"
+        # printf "%s" "$(bit_format)"
     else
         # printf "%s %s" "$IP" "$CONNAME"
         printf "%s" "$CONNAME"
