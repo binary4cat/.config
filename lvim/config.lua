@@ -134,6 +134,35 @@ lvim.plugins = {
     "theniceboy/nvim-deus"
   },
   {
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    config = function()
+      require("hop").setup()
+      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+    end,
+  },
+  {
+    "Pocco81/AutoSave.nvim",
+    config = function()
+      require("autosave").setup({
+        enabled = true,
+        execution_message = "AutoSave OK ~: saved at " .. vim.fn.strftime("%H:%M:%S"),
+        events = {"InsertLeave", "TextChanged"},
+        conditions = {
+            exists = true,
+            filename_is_not = {},
+            filetype_is_not = {},
+            modifiable = true
+        },
+        write_all_buffers = false,
+        on_off_commands = true,
+        clean_command_line_interval = 0,
+        debounce_delay = 135
+      })
+    end,
+  },
+  {
     "f-person/git-blame.nvim",
     event = "BufRead",
     config = function()
