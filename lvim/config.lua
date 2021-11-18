@@ -147,7 +147,7 @@ lvim.plugins = {
     config = function()
       require("autosave").setup({
         enabled = true,
-        execution_message = "AutoSave OK ~: saved at " .. vim.fn.strftime("%H:%M:%S"),
+        execution_message = "WOW! New bugs saved at " .. vim.fn.strftime("%H:%M:%S"),
         events = {"InsertLeave", "TextChanged"},
         conditions = {
             exists = true,
@@ -161,6 +161,9 @@ lvim.plugins = {
         debounce_delay = 135
       })
     end,
+  },
+  {
+    "wakatime/vim-wakatime"
   },
   {
     "f-person/git-blame.nvim",
