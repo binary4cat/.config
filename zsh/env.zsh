@@ -21,3 +21,4 @@ export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 export POWERLEVEL9K_CONFIG_FILE=$HOME/.config/.p10k.zsh
 export ZIM_HOME=$HOME/.zim
+export STARSHIP_CONFIG=~/.config/zsh/starship/config.toml
