@@ -55,6 +55,7 @@ alias mkdir='mkdir -pv'
 alias h='history'
 alias j='jobs -l'
 alias vi=vim
+alias nvim=lvim
 # Stop after sending count ECHO_REQUEST packets #
 alias ping='ping -c 5'
 # Do not wait interval 1 second, go fast #
@@ -74,7 +75,6 @@ alias chgrp='chgrp --preserve-root'
 alias wget='wget -c'
 #alias cat="bat"
 alias top="htop"
-alias wolai="/usr/local/app/wolai.AppImage &"
 ## control system
 alias only_use_hdmi="xrandr --auto --output HDMI-1 --primary && xrandr --output HDMI-1 --auto --output eDP-1 --off"
 alias wifi_conn="sudo wifi-menu"
