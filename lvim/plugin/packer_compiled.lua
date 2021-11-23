@@ -169,7 +169,7 @@ _G.packer_plugins = {
     url = "https://github.com/phaazon/hop.nvim"
   },
   ["lsp_signature.nvim"] = {
-    config = { "\27LJ\1\2;\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\18lsp_signature\frequire\0" },
+    config = { "\27LJ\1\2¨\3\0\0\3\0\a\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\0012\2\0\0:\2\6\1>\0\2\1G\0\1\0\24extra_trigger_chars\17handler_opts\1\0\1\vborder\frounded\1\0\18\16hint_prefix\tî˜« \14doc_lines\3\n\tbind\2\19timer_interval\3È\1\16use_lspsaga\1\16hint_enable\2\14max_width\3x\fpadding\5\15max_height\3\f\20floating_window\2#floating_window_above_cur_line\2\ffix_pos\2\vzindex\3È\1\17hi_parameter LspSignatureActiveParameter\16hint_scheme\vString\17shadow_guibg\nBlack\19always_trigger\1\17shadow_blend\3$\nsetup\18lsp_signature\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
