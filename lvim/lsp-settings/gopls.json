@@ -1,6 +1,7 @@
 {
   "go.useLanguageServer": true,
   "go.lintTool": "golangci-lint",
+  "go.formatTool": "goimports",
   "go.buildTags": "",
   "go.enableCodeLens": {
     "references": false,
@@ -23,7 +24,6 @@
     "options": "",
     "promptForTags": true
   },
-  "go.formatTool": "goimports",
   "go.useCodeSnippetsOnFunctionSuggest": true,
   "go.installDependenciesWhenBuilding": true,
   "go.autocompleteUnimportedPackages": true,

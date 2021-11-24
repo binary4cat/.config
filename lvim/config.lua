@@ -113,20 +113,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   end
 -- end
 
--- set a formatter if you want to override the default lsp one (if it exists)
--- lvim.lang.python.formatters = {
---   {
---     exe = "black",
---   }
--- }
-lvim.lang.go.formatters = {{ exe = "goimports" }}
--- set an additional linter
--- lvim.lang.python.linters = {
---   {
---     exe = "flake8",
---   }
--- }
-
 -- Additional Plugins
 lvim.plugins = {
   -- themes use name is `deus`
@@ -296,7 +282,7 @@ lvim.plugins = {
     config = function ()
       require("go").setup()
       -- Import on save
-      vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+      -- vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
     end
   },
   {
