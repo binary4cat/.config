@@ -27,5 +27,6 @@
   "go.useCodeSnippetsOnFunctionSuggest": true,
   "go.installDependenciesWhenBuilding": true,
   "go.autocompleteUnimportedPackages": true,
-  "go.gocodePackageLookupMod": "go"
+  "go.gocodePackageLookupMod": "go",
+  "go.gotoSymbol.includeImports": true
 }
