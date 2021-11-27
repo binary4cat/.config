@@ -148,7 +148,7 @@ lvim.plugins = {
       vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", { silent = true })
       vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
       vim.api.nvim_set_keymap("n", "m", ":HopChar1<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "L", ":HopLine<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "M", ":HopLine<cr>", { silent = true })
     end,
   },
   -- {

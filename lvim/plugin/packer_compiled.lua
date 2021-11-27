@@ -156,7 +156,7 @@ _G.packer_plugins = {
     url = "https://github.com/ray-x/go.nvim"
   },
   ["hop.nvim"] = {
-    config = { "\27LJ\1\2µ\2\0\0\5\0\19\0&4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0%\2\a\0%\3\b\0003\4\t\0>\0\5\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0%\2\n\0%\3\v\0003\4\f\0>\0\5\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0%\2\r\0%\3\14\0003\4\15\0>\0\5\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0%\2\16\0%\3\17\0003\4\18\0>\0\5\1G\0\1\0\1\0\1\vsilent\2\17:HopLine<cr>\6L\1\0\1\vsilent\2\18:HopChar1<cr>\6m\1\0\1\vsilent\2\18:HopChar2<cr>\6S\1\0\1\vsilent\2\17:HopWord<cr>\6s\6n\20nvim_set_keymap\bapi\bvim\nsetup\bhop\frequire\0" },
+    config = { "\27LJ\1\2µ\2\0\0\5\0\19\0&4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0%\2\a\0%\3\b\0003\4\t\0>\0\5\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0%\2\n\0%\3\v\0003\4\f\0>\0\5\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0%\2\r\0%\3\14\0003\4\15\0>\0\5\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0%\2\16\0%\3\17\0003\4\18\0>\0\5\1G\0\1\0\1\0\1\vsilent\2\17:HopLine<cr>\6M\1\0\1\vsilent\2\18:HopChar1<cr>\6m\1\0\1\vsilent\2\18:HopChar2<cr>\6S\1\0\1\vsilent\2\17:HopWord<cr>\6s\6n\20nvim_set_keymap\bapi\bvim\nsetup\bhop\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -418,9 +418,9 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
+vim.cmd [[noremap <silent> y <cmd>lua require("packer.load")({'vim-surround'}, { keys = "y", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> c <cmd>lua require("packer.load")({'vim-surround'}, { keys = "c", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> d <cmd>lua require("packer.load")({'vim-surround'}, { keys = "d", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> y <cmd>lua require("packer.load")({'vim-surround'}, { keys = "y", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
