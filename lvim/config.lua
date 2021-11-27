@@ -307,9 +307,9 @@ lvim.plugins = {
       -- vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
     end
   },
-  {
-    "github/copilot.vim"
-  },
+  -- {
+  --   "github/copilot.vim"
+  -- },
   {
     "NTBBloodbath/rest.nvim",
     requires = { "nvim-lua/plenary.nvim" },
