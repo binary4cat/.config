@@ -12,6 +12,7 @@ alias mt='neomutt'
 alias r='echo $RANGER_LEVEL'
 alias pu='python3 -m pudb'
 alias ra='ranger'
+alias docker='podman'
 # ra() {
 	#if [ -z "$RANGER_LEVEL" ]
 	#then
