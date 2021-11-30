@@ -13,8 +13,8 @@ export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-export TERM=xterm-256color
-export TERM_ITALICS=true
+#export TERM=xterm-256color
+#export TERM_ITALICS=true
 export RANGER_LOAD_DEFAULT_RC="false"
 export EDITOR=nvim
 export ZSH_AUTOSUGGEST_USE_ASYNC=1

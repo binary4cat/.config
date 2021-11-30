@@ -2,10 +2,10 @@ gui:
   theme:
     lightTheme: false
     activeBorderColor:
-      - white
+      - green
       - bold
     inactiveBorderColor:
       - white
     selectedLineBgColor:
       - reverse
-      - blue
+      - black
