@@ -150,7 +150,7 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["go.nvim"] = {
-    config = { "\27LJ\1\0020\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\ago\frequire\0" },
+    config = { "\27LJ\1\2¢\1\0\0\3\0\a\0\f4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0)\2\1\0>\0\3\1G\0\1\0L autocmd BufWritePre *.go :silent! lua require('go.format').goimport() \14nvim_exec\bapi\bvim\nsetup\ago\frequire\0" },
     loaded = true,
     path = "/home/binary4cat/.local/share/lunarvim/site/pack/packer/start/go.nvim",
     url = "https://github.com/ray-x/go.nvim"
@@ -395,7 +395,7 @@ try_loadstring("\27LJ\1\2?\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G
 time([[Config for lualine.nvim]], false)
 -- Config for: go.nvim
 time([[Config for go.nvim]], true)
-try_loadstring("\27LJ\1\0020\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\ago\frequire\0", "config", "go.nvim")
+try_loadstring("\27LJ\1\2¢\1\0\0\3\0\a\0\f4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0)\2\1\0>\0\3\1G\0\1\0L autocmd BufWritePre *.go :silent! lua require('go.format').goimport() \14nvim_exec\bapi\bvim\nsetup\ago\frequire\0", "config", "go.nvim")
 time([[Config for go.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
@@ -418,9 +418,9 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> y <cmd>lua require("packer.load")({'vim-surround'}, { keys = "y", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> c <cmd>lua require("packer.load")({'vim-surround'}, { keys = "c", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> d <cmd>lua require("packer.load")({'vim-surround'}, { keys = "d", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> y <cmd>lua require("packer.load")({'vim-surround'}, { keys = "y", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]

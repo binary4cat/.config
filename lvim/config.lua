@@ -304,7 +304,7 @@ lvim.plugins = {
     config = function ()
       require("go").setup()
       -- Import on save
-      -- vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+      vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
     end
   },
   -- {
@@ -314,19 +314,19 @@ lvim.plugins = {
     "NTBBloodbath/rest.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
-    require("rest-nvim").setup({
-      -- Open request results in a horizontal split
-      result_split_horizontal = false,
-      -- Skip SSL verification, useful for unknown certificates
-      skip_ssl_verification = false,
-      -- Highlight request on run
-      highlight = {
-        enabled = true,
-        timeout = 150,
-      },
-      -- Jump to request line on run
-      jump_to_request = false,
-    })
+      require("rest-nvim").setup({
+        -- Open request results in a horizontal split
+        result_split_horizontal = false,
+        -- Skip SSL verification, useful for unknown certificates
+        skip_ssl_verification = false,
+        -- Highlight request on run
+        highlight = {
+          enabled = true,
+          timeout = 150,
+        },
+        -- Jump to request line on run
+        jump_to_request = false,
+      })
     end
   }
 }

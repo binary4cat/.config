@@ -2,9 +2,10 @@
   "go.useLanguageServer": true,
   "go.lintTool": "golangci-lint",
   "go.formatTool": "goimports",
+  "go.docsTool": "guru",
   "go.buildTags": "",
   "go.enableCodeLens": {
-    "references": false,
+    "references": true,
     "runtest": true
   },
   "go.testFlags": [
@@ -28,5 +29,14 @@
   "go.installDependenciesWhenBuilding": true,
   "go.autocompleteUnimportedPackages": true,
   "go.gocodePackageLookupMod": "go",
-  "go.gotoSymbol.includeImports": true
+  "go.gotoSymbol.includeImports": true,
+  "go.gotoSymbol.includeGoroot": true,
+  "go.toolsManagement.autoUpdate": true,
+  "gopls": {
+    "codelenses": {
+      "generate": true,
+      "gc_details": true,
+      "test": true
+    }
+  }
 }
