@@ -3,5 +3,5 @@ add_newline = true
 
 [golang]
 format = "via [$symbol $version]($style) "
-symbol = "Golang"
+symbol = "🐹 "
 style = "bold cyan"
