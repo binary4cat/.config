@@ -32,11 +32,5 @@
   "go.gotoSymbol.includeImports": true,
   "go.gotoSymbol.includeGoroot": true,
   "go.toolsManagement.autoUpdate": true,
-  "gopls": {
-    "codelenses": {
-      "generate": true,
-      "gc_details": true,
-      "test": true
-    }
-  }
+  "gopls": {}
 }

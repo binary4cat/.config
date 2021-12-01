@@ -1,11 +1,11 @@
-gui:
-  theme:
-    lightTheme: false
-    activeBorderColor:
-      - green
-      - bold
-    inactiveBorderColor:
-      - white
-    selectedLineBgColor:
-      - reverse
-      - black
+#gui:
+#  theme:
+#    lightTheme: false
+#    activeBorderColor:
+#      - green
+#      - bold
+#    inactiveBorderColor:
+#      - white
+#    selectedLineBgColor:
+#      - reverse
+#      - black
