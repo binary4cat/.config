@@ -16,7 +16,7 @@ lvim.transparent_window = true
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+-- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
@@ -106,7 +106,7 @@ lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
-lvim.builtin.lualine.options.theme = "powerline_dark"
+lvim.builtin.lualine.options.theme = "onedark"
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -231,10 +231,6 @@ lvim.plugins = {
 		end,
 	},
   {
-    "folke/todo-comments.nvim",
-    event = "BufRead",
-  },
-  {
     "tpope/vim-surround",
     keys = {"c", "d", "y"}
   },
@@ -327,6 +323,36 @@ lvim.plugins = {
         jump_to_request = false,
       })
     end
+  },
+  {
+    "rmagatti/goto-preview",
+    config = function()
+    require('goto-preview').setup {
+          width = 120; -- Width of the floating window
+          height = 25; -- Height of the floating window
+          default_mappings = true; -- Bind default mappings
+          debug = false; -- Print debug information
+          opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
+          post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
+          -- You can use "default_mappings = true" setup option
+          -- Or explicitly set keybindings
+          -- vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>")
+          -- vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
+          -- vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
+      }
+    end
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end
+  },
+  { "tpope/vim-repeat" },
+  {
+    "felipec/vim-sanegx",
+    event = "BufRead",
   }
 }
 
