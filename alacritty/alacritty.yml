@@ -3,7 +3,7 @@ background_opacity: 0.9
 # 设置字体
 font:
   normal:
-    family: "CaskaydiaCove Nerd Font"
+    family: "FuraCode Nerd Font"
     style: Regular
   bold:
     family: "FuraCode Nerd Font"
