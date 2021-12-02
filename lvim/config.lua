@@ -101,6 +101,8 @@ lvim.builtin.lualine.options.theme = "powerline_dark"
 lvim.builtin.lualine.style = "default"
 lvim.builtin.lualine.sections.lualine_a = {'mode'}
 lvim.builtin.lualine.sections.lualine_b = {'branch', 'diff', {'diagnostics', sources={'nvim_lsp'}}} 
+
+lvim.builtin.cmp.sources = {{ name = 'copilot' }}
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -296,9 +298,12 @@ lvim.plugins = {
       vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
     end
   },
-  -- {
-  --   "github/copilot.vim"
-  -- },
+  {
+    "github/copilot.vim"
+  },
+  {
+    "hrsh7th/cmp-copilot"
+  },
   {
     "NTBBloodbath/rest.nvim",
     requires = { "nvim-lua/plenary.nvim" },
@@ -349,6 +354,7 @@ lvim.plugins = {
     event = "BufRead",
   }
 }
+
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {

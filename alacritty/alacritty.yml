@@ -3,32 +3,20 @@ background_opacity: 0.9
 # 设置字体
 font:
   normal:
-    family: "FuraCode Nerd Font"
+    family: "FuraCode Nerd Font Mono"
     style: Regular
   bold:
-    family: "FuraCode Nerd Font"
+    family: "FuraCode Nerd Font Mono"
     style: Bold
   italic:
-    family: "FuraCode Nerd Font"
+    family: "FuraCode Nerd Font Mono"
     style: Italic
   bold_italic:
-    family: "FuraCode Nerd Font"
+    family: "FuraCode Nerd Font Mono"
     style: Bold Italic
 
   # 字大小
   size: 10.0 
-
-  offset:
-    x: 0
-    y: 0
-  glyph_offset:
-    x: 0
-    y: 0
-
-window:
-  padding:
-    x: 2
-    y: 2
 
 scrolling:
 # 回滚缓冲区中的最大行数,指定“0”将禁用滚动。
