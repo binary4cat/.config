@@ -13,6 +13,10 @@ lvim.log.level = "warn"
 -- lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 lvim.transparent_window = true
+
+-- global const
+vim.g.onedark_style = "warmer"
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
@@ -97,12 +101,13 @@ lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
-lvim.builtin.lualine.options.theme = "powerline_dark"
+lvim.builtin.lualine.options.theme = "onedark"
 lvim.builtin.lualine.style = "default"
 lvim.builtin.lualine.sections.lualine_a = {'mode'}
 lvim.builtin.lualine.sections.lualine_b = {'branch', 'diff', {'diagnostics', sources={'nvim_lsp'}}} 
 
-lvim.builtin.cmp.sources = {{ name = 'copilot' }}
+-- lvim.builtin.cmp.sources = {{ name = 'copilot' }}
+
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -131,9 +136,9 @@ lvim.builtin.cmp.sources = {{ name = 'copilot' }}
 
 -- Additional Plugins
 lvim.plugins = {
-  -- themes use name is `deus`
+  -- theme list: https://github.com/rockerBOO/awesome-neovim#colorscheme
   {
-    "theniceboy/nvim-deus"
+    "navarasu/onedark.nvim"
   },
   {
     "phaazon/hop.nvim",
@@ -298,12 +303,12 @@ lvim.plugins = {
       vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
     end
   },
-  {
-    "github/copilot.vim"
-  },
-  {
-    "hrsh7th/cmp-copilot"
-  },
+  -- {
+  --   "github/copilot.vim"
+  -- },
+  -- {
+  --   "hrsh7th/cmp-copilot"
+  -- },
   {
     "NTBBloodbath/rest.nvim",
     requires = { "nvim-lua/plenary.nvim" },

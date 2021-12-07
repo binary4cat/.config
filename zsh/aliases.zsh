@@ -81,3 +81,5 @@ alias only_use_hdmi="xrandr --auto --output HDMI-1 --primary && xrandr --output 
 alias wifi_conn="sudo wifi-menu"
 alias audio_control="alsamixer"
 alias wifi_conn_gui="sudo nm-connection-editor"
+
+alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
