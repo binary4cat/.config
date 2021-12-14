@@ -12,7 +12,6 @@ alias mt='neomutt'
 alias r='echo $RANGER_LEVEL'
 alias pu='python3 -m pudb'
 alias ra='ranger'
-alias docker='podman'
 # ra() {
 	#if [ -z "$RANGER_LEVEL" ]
 	#then
@@ -83,3 +82,4 @@ alias audio_control="alsamixer"
 alias wifi_conn_gui="sudo nm-connection-editor"
 
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+alias dcrunbuild="docker run --net=host --privileged --cap-add SYS_ADMIN -it"
