@@ -102,6 +102,9 @@ lvim.builtin.nvimtree.git_hl = 1
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "" }
 lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.rainbow.enable = true
+lvim.builtin.treesitter.rainbow.extended_mode = true
+lvim.builtin.treesitter.rainbow.max_file_lines = 1500
 
 lvim.builtin.lualine.options.theme = "onedark"
 lvim.builtin.lualine.style = "default"
