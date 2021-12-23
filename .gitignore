@@ -6,7 +6,8 @@
 !/.zim/
 /.zim/modules/
 
-!/dunst
+!/dunst/
+/dunst/dunstrc
 
 !/fcitx5/
 /fcitx5/profile_GGp2dP
