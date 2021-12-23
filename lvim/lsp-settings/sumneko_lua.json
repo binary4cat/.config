@@ -1,5 +1,6 @@
 {
   "Lua.runtime.version": "LuaJIT",
+  "Lua.completion.autoRequire": true,
   "Lua.diagnostics.enable": true,
   "Lua.diagnostics.globals": [
     "vim",

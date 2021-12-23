@@ -10,7 +10,7 @@ an executable
 
 -- general
 lvim.log.level = "warn"
--- lvim.format_on_save = true
+lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 lvim.transparent_window = true
 
@@ -98,7 +98,7 @@ lvim.builtin.nvimtree.hide_dotfiles = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ignore_install = { "" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.builtin.lualine.options.theme = "onedark"
