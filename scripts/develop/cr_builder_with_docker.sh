@@ -6,7 +6,7 @@ GOPRIVATE=$(go env GOPRIVATE)
 
 build_docker(){
   echo '
-  FROM ubuntu:18.04
+  FROM centos:centos7
   RUN echo "deb http://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse\n\
     deb http://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse\n\
     deb http://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse\n\

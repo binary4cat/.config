@@ -150,6 +150,13 @@ _G.packer_plugins = {
     path = "/home/binary4cat/.local/share/lunarvim/site/pack/packer/opt/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["glow.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/binary4cat/.local/share/lunarvim/site/pack/packer/opt/glow.nvim",
+    url = "https://github.com/npxbr/glow.nvim"
+  },
   ["go.nvim"] = {
     config = { "\27LJ\1\2¢\1\0\0\3\0\a\0\f4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0007\0\5\0%\1\6\0)\2\1\0>\0\3\1G\0\1\0L autocmd BufWritePre *.go :silent! lua require('go.format').goimport() \14nvim_exec\bapi\bvim\nsetup\ago\frequire\0" },
     loaded = true,
@@ -446,17 +453,21 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> y <cmd>lua require("packer.load")({'vim-surround'}, { keys = "y", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> d <cmd>lua require("packer.load")({'vim-surround'}, { keys = "d", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> y <cmd>lua require("packer.load")({'vim-surround'}, { keys = "y", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> c <cmd>lua require("packer.load")({'vim-surround'}, { keys = "c", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'glow.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'nvim-ts-context-commentstring'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-lastplace', 'numb.nvim', 'Comment.nvim', 'gitsigns.nvim', 'git-blame.nvim', 'hop.nvim', 'todo-comments.nvim', 'vim-sanegx'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-lastplace', 'numb.nvim', 'Comment.nvim', 'git-blame.nvim', 'gitsigns.nvim', 'hop.nvim', 'todo-comments.nvim', 'vim-sanegx'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'toggleterm.nvim', 'which-key.nvim', 'barbar.nvim', 'dashboard-nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'lsp_signature.nvim', 'nvim-ts-autotag'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au WinScrolled * ++once lua require("packer.load")({'neoscroll.nvim'}, { event = "WinScrolled *" }, _G.packer_plugins)]]

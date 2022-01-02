@@ -7,11 +7,11 @@
 /.zim/modules/
 
 !/dunst/
-/dunst/dunstrc
 
 !/fcitx5/
 /fcitx5/profile_GGp2dP
 /fcitx5/conf/cached_layouts
+/fcitx5/*.log
 
 !/i3/
 
@@ -63,3 +63,5 @@ ranger/__pycache__/commands.cpython-39.opt-1.pyc
 
 !/lazygit/
 /lazygit/state.yml
+
+!/mpv/

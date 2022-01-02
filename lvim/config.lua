@@ -95,8 +95,6 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.hide_dotfiles = 0
-lvim.builtin.nvimtree.gitignore = 1
-lvim.builtin.nvimtree.git_hl = 1
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -362,6 +360,13 @@ lvim.plugins = {
   {
     "felipec/vim-sanegx",
     event = "BufRead",
+  },
+  -- You must install glow globally
+  -- https://github.com/charmbracelet/glow
+  -- yay -S glow
+  {
+    "npxbr/glow.nvim",
+    ft = {"markdown"}
   }
 }
 
