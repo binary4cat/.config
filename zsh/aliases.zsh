@@ -55,7 +55,6 @@ alias mkdir='mkdir -pv'
 alias h='history'
 alias j='jobs -l'
 alias vi=vim
-alias nvim=lvim
 # Stop after sending count ECHO_REQUEST packets #
 alias ping='ping -c 5'
 # Do not wait interval 1 second, go fast #
@@ -83,3 +82,7 @@ alias wifi_conn_gui="sudo nm-connection-editor"
 
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 alias dcrunbuild="docker run --net=host --privileged --cap-add SYS_ADMIN -it"
+
+#### program
+alias startsunlogin="sudo systemctl start runsunloginclient.service"
+alias startdocker="sudo systemctl start docker.service"
