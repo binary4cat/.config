@@ -20,13 +20,9 @@
 !/neofetch/
 
 !/nvim/
-/nvim/plugged/*
-/nvim/tmp/
+/nvim/plugin/
 
-!/nvim.bak
-/nvim.bak/tmp/
-
-!/lvim
+!/lvim.bak/config.lua
 
 !/polybar/
 
