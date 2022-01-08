@@ -5,12 +5,12 @@ source $HOME/.config/zsh/vi.zsh
 source $HOME/.config/zsh/fzf.zsh
 source $HOME/.config/zsh/mappings.zsh
 source $HOME/.config/zsh/config.zsh
-
-
 source $HOME/.config/.zsh-autopair/autopair.zsh
-autopair-init
 source $HOME/.zim/init.zsh
 source $HOME/.zim/modules/fzf-tab/fzf-tab.plugin.zsh
+
+# steup something...
+autopair-init
 eval "$(starship init zsh)"
 eval "$(fnm env)"
 source /etc/profile
