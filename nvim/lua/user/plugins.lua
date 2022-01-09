@@ -94,9 +94,7 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-  use {
-    "f-person/git-blame.nvim",
-  }
+  use "f-person/git-blame.nvim"
 
   -- Agility
   use {
@@ -105,29 +103,21 @@ return packer.startup(function(use)
     require'hop'.setup()
   }
   use "p00f/nvim-ts-rainbow"
+  use "karb94/neoscroll.nvim"
+  use "blackCauldron7/surround.nvim"
+  use "kosayoda/nvim-lightbulb"
   use {
-    "karb94/neoscroll.nvim",
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
   }
 
   -- Editor tools
-  use {
-    "folke/todo-comments.nvim",
-  }
-  use {
-    "npxbr/glow.nvim",
-  }
-  use {
-    "rmagatti/goto-preview",
-  }
-  use {
-    "nacro90/numb.nvim",
-  }
-  use {
-    "ray-x/lsp_signature.nvim",
-  }
-  use {
-    "ethanholz/nvim-lastplace",
-	}
+  use "folke/todo-comments.nvim"
+  use "npxbr/glow.nvim"
+  use "rmagatti/goto-preview"
+  use "nacro90/numb.nvim"
+  use "ray-x/lsp_signature.nvim"
+  use "ethanholz/nvim-lastplace"
   use {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
@@ -144,9 +134,7 @@ return packer.startup(function(use)
   }
 
   -- language
-  use {
-    "ray-x/go.nvim",
-  }
+  use "ray-x/go.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

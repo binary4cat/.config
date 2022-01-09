@@ -208,6 +208,25 @@ local leader_normal_mappings = {
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
   w = { "<cmd>w!<CR>", "Save" },
+  x = {
+    name = "Programming...",
+    a = { "<cmd>CodeActionMenu<cr>", "NeoVim Code Action Menu" },
+    g = {
+      name = "Golang nvim action",
+      f = {
+        name = "Auto fill",
+        t = { "<cmd>GoFillStruct<cr>", "auto fill struct" },
+        w = { "<cmd>GoFillSwitch<cr>", "fill switch" },
+        e = { "<cmd>GoIfErr<cr>", "Add if err" },
+        p = { "<cmd>GoFixPlurals<cr>", "change func foo(b int, a int, r int) -> func foo(b, a, r int)" },
+      },
+      g = {
+        name = "Go binaries install and update",
+        i = { "<cmd>GoInstallBinaries<cr>", "use go install to install all tools, skip the ones installed" },
+        u = { "<cmd>GoUpdateBinaries<cr>", "use go install to update all tools to the latest version" }
+      }
+    }
+  }
 }
 
 -- hop.vim key mapping
