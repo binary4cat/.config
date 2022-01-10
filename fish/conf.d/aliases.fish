@@ -86,3 +86,4 @@ alias dcrunbuild="docker run --net=host --privileged --cap-add SYS_ADMIN -it"
 #### program
 alias startsunlogin="sudo systemctl start runsunloginclient.service"
 alias startdocker="sudo systemctl start docker.service"
+alias ssh="kitty +kitten ssh"
