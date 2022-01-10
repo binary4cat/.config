@@ -4,3 +4,6 @@ end
 
 # Use starship prompt https://starship.rs
 starship init fish | source
+# the fuck init
+# eval $(thefuck --alias)
+
