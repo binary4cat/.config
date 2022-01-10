@@ -16,9 +16,10 @@ if ( _TRANSPARENT_ ) then
   enable_transparent_mode()
 end
 
-if ( _COLORSCHEME_=="tokyonight" ) then
+if ( _COLORSCHEME_ == "tokyonight" ) then
   vim.g.tokyonight_style = "night"
   vim.g.tokyonight_lualine_bold = true
+  vim.g.tokyonight_transparent_sidebar = true
 end
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. _COLORSCHEME_)
