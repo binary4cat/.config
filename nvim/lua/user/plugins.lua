@@ -110,6 +110,10 @@ return packer.startup(function(use)
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
   }
+  use {
+    "hrsh7th/cmp-copilot",
+    requires = { "github/copilot.vim" }
+  }
 
   -- Editor tools
   use "folke/todo-comments.nvim"
