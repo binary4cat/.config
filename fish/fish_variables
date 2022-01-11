@@ -1,5 +1,25 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR EDITOR:nvim
+SETUVAR GLFW_IM_MODULE:DEFAULT\x3dibus
+SETUVAR GO111MODULE:on
+SETUVAR GOPRIVATE:devgit\x2estarschina\x2ecom/\x2a
+SETUVAR GOPROXY:https\x3a//goproxy\x2ecn\x2cdirect
+SETUVAR GTK_IM_MODULE:DEFAULT\x3dfcitx
+SETUVAR INPUT_METHOD:DEFAULT\x3dfcitx
+SETUVAR LOCALBIN:/home/binary4cat/\x2econfig/bin
+SETUVAR LOCALPROG:/home/binary4cat/prog
+SETUVAR --path PATH:/home/binary4cat/\x2elocal/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/sbin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2elocal/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2elocal/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/usr/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2elocal/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/usr/bin/site_perl\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2elocal/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/usr/bin/vendor_perl\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2elocal/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/usr/bin/core_perl\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2econfig/bin\x1e/home/binary4cat/go/bin\x1e/usr/local/bin\x1e/home/binary4cat/go/bin\x1e/home/binary4cat/\x2epub\x2dcache/bin\x1e/home/binary4cat/\x2epub\x2dcache/bin
+SETUVAR POWERLEVEL9K_CONFIG_FILE:/home/binary4cat/\x2econfig/\x2ep10k\x2ezsh
+SETUVAR QT_IM_MODULE:DEFAULT\x3dfcitx
+SETUVAR RANGER_LOAD_DEFAULT_RC:false
+SETUVAR SDL_IM_MODULE:DEFAULT\x3dfcitx
+SETUVAR STARSHIP_CONFIG:/home/binary4cat/\x2econfig/zsh/starship/config\x2etoml
+SETUVAR XDG_CONFIG_HOME:/home/binary4cat/\x2econfig
+SETUVAR XMODIFIERS:DEFAULT\x3d\x40im\x3dfcitx
+SETUVAR ZIM_HOME:/home/binary4cat/\x2ezim
+SETUVAR ZSH_AUTOSUGGEST_MANUAL_REBIND:1
+SETUVAR ZSH_AUTOSUGGEST_USE_ASYNC:1
 SETUVAR __fish_initialized:3100
 SETUVAR fish_color_autosuggestion:777777
 SETUVAR fish_color_cancel:\x2dr
