@@ -1,31 +1,33 @@
-set -x PATH            $HOME/.local/bin:$PATH
-set -x XDG_CONFIG_HOME $HOME/.config
-set -x LOCALBIN        $XDG_CONFIG_HOME/bin
-set -x PATH            $PATH:$LOCALBIN
-set -x LOCALPROG       $HOME/prog
+# Set PATH
+set -gx PATH $HOME/.local/bin        $PATH
+set -gx PATH $LOCALBIN               $PATH
+set -gx PATH /usr/local/bin          $PATH
+set -gx PATH $HOME/go/bin            $PATH
+set -gx PATH $HOME/.pub-cache/bin    $PATH
+
+set XDG_CONFIG_HOME $HOME/.config
+set LOCALBIN        $XDG_CONFIG_HOME/bin
+set LOCALPROG       $HOME/prog
 
 # golang
-set -x GO111MODULE on
-set -x GOPROXY     "https://goproxy.cn,direct"
-set -x GOPRIVATE   "devgit.starschina.com/*"
-set -x PATH        $PATH:/usr/local/bin 
-set -x PATH        $PATH:$HOME/go/bin
-set -x PATH        "$PATH":"$HOME/.pub-cache/bin"
+set GO111MODULE on
+set GOPROXY     "https://goproxy.cn,direct"
+set GOPRIVATE   "devgit.starschina.com/*"
 
 #export TERM=xterm-256color
 #export TERM_ITALICS=true
-set -x RANGER_LOAD_DEFAULT_RC        "false"
-set -x EDITOR                        nvim
-set -x ZSH_AUTOSUGGEST_USE_ASYNC     1
-set -x ZSH_AUTOSUGGEST_MANUAL_REBIND 1
-set -x POWERLEVEL9K_CONFIG_FILE      $HOME/.config/.p10k.zsh
-set -x ZIM_HOME                      $HOME/.zim
-set -x STARSHIP_CONFIG               ~/.config/zsh/starship/config.toml
+set RANGER_LOAD_DEFAULT_RC        "false"
+set EDITOR                        nvim
+set ZSH_AUTOSUGGEST_USE_ASYNC     1
+set ZSH_AUTOSUGGEST_MANUAL_REBIND 1
+set POWERLEVEL9K_CONFIG_FILE      $HOME/.config/.p10k.zsh
+set ZIM_HOME                      $HOME/.zim
+set STARSHIP_CONFIG               ~/.config/zsh/starship/config.toml
 
 # fcitx5
-set -x GTK_IM_MODULE  DEFAULT=fcitx
-set -x QT_IM_MODULE   DEFAULT=fcitx
-set -x XMODIFIERS     DEFAULT=@im=fcitx
-set -x INPUT_METHOD   DEFAULT=fcitx
-set -x SDL_IM_MODULE  DEFAULT=fcitx
-set -x GLFW_IM_MODULE DEFAULT=ibus
+set GTK_IM_MODULE  DEFAULT=fcitx
+set QT_IM_MODULE   DEFAULT=fcitx
+set XMODIFIERS     DEFAULT=@im=fcitx
+set INPUT_METHOD   DEFAULT=fcitx
+set SDL_IM_MODULE  DEFAULT=fcitx
+set GLFW_IM_MODULE DEFAULT=ibus
