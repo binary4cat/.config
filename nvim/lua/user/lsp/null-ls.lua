@@ -8,39 +8,72 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
+-- Async formatting
+_G.formatting = function(bufnr)
+	bufnr = tonumber(bufnr) or vim.api.nvim_get_current_buf()
+
+	vim.lsp.buf_request(
+		bufnr,
+		"textDocument/formatting",
+		{ textDocument = { uri = vim.uri_from_bufnr(bufnr) } },
+		function(err, res)
+			if err then
+				local err_msg = type(err) == "string" and err or err.message
+				-- you can modify the log message / level (or ignore it completely)
+				vim.notify("formatting: " .. err_msg, vim.log.levels.WARN)
+				return
+			end
+
+			-- don't apply results if buffer is unloaded or has been modified
+			if not vim.api.nvim_buf_is_loaded(bufnr) or vim.api.nvim_buf_get_option(bufnr, "modified") then
+				return
+			end
+
+			if res then
+				vim.lsp.util.apply_text_edits(res, bufnr)
+				vim.api.nvim_buf_call(bufnr, function()
+					vim.cmd("silent noautocmd update")
+				end)
+			end
+		end
+	)
+end
+
 null_ls.setup({
 	debug = false,
-  on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-            vim.cmd([[
+	on_attach = function(client)
+		if client.supports_method("textDocument/formatting") then
+			-- wrap in an augroup to prevent duplicate autocmds
+			vim.cmd([[
             augroup LspFormatting
                 autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+                autocmd BufWritePre <buffer> lua formatting(vim.fn.expand("<abuf>"))
             augroup END
             ]])
-        end
-  end,
+		end
+	end,
+	-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 	sources = {
-    ---- formatting ----
-    formatting.goimports.with({
-      filetypes = { "go" },
-      command = "goimports",
-      args = {},
-    }),
+		---- formatting ----
+		formatting.goimports.with({
+			filetypes = { "go" },
+			command = "goimports",
+			args = {},
+		}),
 		formatting.prettier.with({
-      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-    }),
+			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+		}),
 		formatting.black.with({
-      extra_args = { "--fast" },
-    }),
+			extra_args = { "--fast" },
+		}),
 		formatting.stylua,
 
-    ---- diagnostics----
-    -- diagnostics.flake8
-    diagnostics.golangci_lint.with({
-      filetypes = { "go" },
-      command = "golangci-lint",
-      args = { "run", "--fix=false", "--fast", "--out-format=json", "$DIRNAME", "--path-prefix", "$ROOT" },
-    }),
+		---- diagnostics----
+		-- diagnostics.flake8
+		diagnostics.golangci_lint.with({
+			filetypes = { "go" },
+			command = "golangci-lint",
+			args = { "run", "--fix=false", "--fast", "--out-format=json", "$DIRNAME", "--path-prefix", "$ROOT" },
+		}),
 	},
 })
