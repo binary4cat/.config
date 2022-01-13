@@ -3,15 +3,17 @@ if not status_ok then
 	return
 end
 
+-- load_extension
+telescope.load_extension("neoclip")
+telescope.load_extension("macroscope")
+
 local actions = require("telescope.actions")
 
 telescope.setup({
 	defaults = {
-
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
-
 		mappings = {
 			i = {
 				["<C-n>"] = actions.cycle_history_next,

@@ -72,6 +72,21 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
+	use({
+		"hrsh7th/cmp-copilot",
+		requires = { "github/copilot.vim" },
+	})
+	use("hrsh7th/cmp-nvim-lua")
+	use("lukas-reineke/cmp-rg")
+	use({
+		"David-Kunz/cmp-npm",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("cmp-npm").setup()
+		end,
+	})
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -81,7 +96,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("jose-elias-alvarez/null-ls.nvim") -- for formatter and linters
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -112,8 +127,11 @@ return packer.startup(function(use)
 		cmd = "CodeActionMenu",
 	})
 	use({
-		"hrsh7th/cmp-copilot",
-		requires = { "github/copilot.vim" },
+		"AckslD/nvim-neoclip.lua",
+		requires = {
+			{ "tami5/sqlite.lua", module = "sqlite" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
 	})
 
 	-- Editor tools

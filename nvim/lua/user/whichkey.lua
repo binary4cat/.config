@@ -176,7 +176,7 @@ local leader_normal_mappings = {
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
-	q = { "<cmd>q!<CR>", "Quit" },
+	q = { "<cmd>Telescope macroscope<cr>", "Macros" },
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -238,7 +238,12 @@ local hop_mapping = {
 	M = { "<cmd>HopLine<cr>", "jump to any visible line in your buffer" },
 }
 
+local neoclip_mapping = {
+	['"'] = { "<cmd>Telescope neoclip<cr>", "Show yanks with telescope" },
+}
+
 which_key.setup(setup)
 which_key.register(leader_normal_mappings, leader_normal_opts)
 which_key.register(leader_visual_mappings, leader_visual_opts)
 which_key.register(hop_mapping)
+which_key.register(neoclip_mapping)

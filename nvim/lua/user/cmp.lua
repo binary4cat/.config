@@ -106,6 +106,9 @@ cmp.setup({
 				buffer = "[﬘ Buffer]",
 				path = "[ Path]",
 				copilot = "[ﮧ Copilot]",
+				nvim_lua = "[ NVimLua]",
+				rg = " [Ripgrep]",
+				npm = " [NPM]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -116,6 +119,9 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "nvim_lua" },
+		{ name = "rg" },
+		{ name = "npm", keyword_length = 4 },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
