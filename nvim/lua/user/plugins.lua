@@ -77,7 +77,6 @@ return packer.startup(function(use)
 		requires = { "github/copilot.vim" },
 	})
 	use("hrsh7th/cmp-nvim-lua")
-	use("lukas-reineke/cmp-rg")
 	use({
 		"David-Kunz/cmp-npm",
 		requires = {
@@ -149,6 +148,18 @@ return packer.startup(function(use)
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 	})
+	use({
+		"lewis6991/spellsitter.nvim",
+		config = function()
+			require("spellsitter").setup()
+		end,
+	})
+	use({
+		"SmiteshP/nvim-gps",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
+	use("romgrk/nvim-treesitter-context")
+	use("anuvyklack/pretty-fold.nvim")
 
 	-- Network
 	use({

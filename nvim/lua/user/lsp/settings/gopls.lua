@@ -1,8 +1,8 @@
 local lspconfig = require("lspconfig")
 
 return {
-	cmd = { "gopls" },
-	filetypes = { "go", "gomod", "gotmpl" },
+	cmd = { "gopls", "serve" },
+	filetypes = { "go", "mod", "tmpl" },
 	root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
 	settings = {
 		gopls = {
@@ -13,7 +13,7 @@ return {
 				unusedparams = true,
 			},
 			staticcheck = true,
-			usePlaceholders = true,
+			-- usePlaceholders = true,
 		},
 	},
 }
