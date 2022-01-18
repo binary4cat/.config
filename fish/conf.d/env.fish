@@ -8,6 +8,7 @@ set -gx PATH $HOME/.pub-cache/bin    $PATH
 set XDG_CONFIG_HOME $HOME/.config
 set LOCALBIN        $XDG_CONFIG_HOME/bin
 set LOCALPROG       $HOME/prog
+set AWT_TOOLKIT     MToolkit
 
 # golang
 set GO111MODULE on
