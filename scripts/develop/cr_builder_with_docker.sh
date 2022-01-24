@@ -6,12 +6,9 @@ GOPRIVATE=$(go env GOPRIVATE)
 
 build_docker(){
   echo '
-  FROM centos:centos7
-  RUN echo "deb http://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse\n\
-    deb http://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse\n\
-    deb http://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse\n\
-    deb http://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse" > /etc/apt/sources.list
-  RUN apt-get update && apt-get -y install sshfs openssl curl upx git zsh gcc g++
+  FROM centos:7
+  RUN sed -e "s|^mirrorlist=|#mirrorlist=|g" -e "s|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.ustc.edu.cn/centos|g" -i.bak /etc/yum.repos.d/CentOS-Base.repo
+  RUN yum update -y && yum -y install sshfs openssl curl upx git gcc gcc-c++ 
   RUN curl -L https://raw.githubusercontent.com/binary4cat/golang-tools-install-script/feature/mirror/goinstall.sh | bash -s -- --mirror https://mirrors.ustc.edu.cn/golang
   # 自动安装的go会写入全局变量，这里需要修改文件
   RUN sed -i "s/^\(export GOPATH=\).*$/\1'${GOPATH//\//\\\/}'/" ~/.bashrc
@@ -26,7 +23,7 @@ run_docker(){
   docker run\
     -v $GOROOT:$GOROOT\
     -v $GOPATH:$GOPATH\
-    -v /data:/mnt/data\
+    -v /data:/data\
     --net=host\
     --privileged\
     --cap-add SYS_ADMIN\
