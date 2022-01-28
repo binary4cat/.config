@@ -47,7 +47,7 @@ null_ls.setup({
 			vim.cmd([[
             augroup LspFormatting
                 autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua formatting(vim.fn.expand("<abuf>"))
+                autocmd BufWritePost <buffer> lua formatting(vim.fn.expand("<abuf>"))
             augroup END
             ]])
 		end

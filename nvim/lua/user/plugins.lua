@@ -132,6 +132,7 @@ return packer.startup(function(use)
 			{ "nvim-telescope/telescope.nvim" },
 		},
 	})
+	use("j-hui/fidget.nvim")
 
 	-- Editor tools
 	use("folke/todo-comments.nvim")
