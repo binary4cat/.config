@@ -19,10 +19,11 @@
 
 ## Neovim
 
-## Installed package (can be use yay)
+## Installed package (can use yay)
 
 <details>
   <summary> packages </summary>
+
 ```shell
 acpi
 adobe-source-han-serif-cn-fonts
@@ -124,4 +125,5 @@ xorg-xsetroot
 yarn
 yay
 ```
+
 </details>
