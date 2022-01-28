@@ -160,7 +160,6 @@ return packer.startup(function(use)
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
 	use("romgrk/nvim-treesitter-context")
-	use("anuvyklack/pretty-fold.nvim")
 
 	-- Network
 	use({
