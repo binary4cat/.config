@@ -73,7 +73,17 @@ null_ls.setup({
 		diagnostics.golangci_lint.with({
 			filetypes = { "go" },
 			command = "golangci-lint",
-			args = { "run", "--fix=false", "--fast", "--out-format=json", "$DIRNAME", "--path-prefix", "$ROOT" },
+			args = {
+				"run",
+				"-c",
+				vim.fn.expand("~/.config/nvim/lua/user/lsp/linter_config/golangci.yaml"),
+				"--fix=false",
+				"--fast",
+				"--out-format=json",
+				"$DIRNAME",
+				"--path-prefix",
+				"$ROOT",
+			},
 		}),
 	},
 })
