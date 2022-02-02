@@ -4,6 +4,7 @@ set -gx PATH $LOCALBIN               $PATH
 set -gx PATH /usr/local/bin          $PATH
 set -gx PATH $HOME/go/bin            $PATH
 set -gx PATH $HOME/.pub-cache/bin    $PATH
+set -gx PATH $HOME/.npm-global/bin    $PATH
 
 set XDG_CONFIG_HOME $HOME/.config
 set LOCALBIN        $XDG_CONFIG_HOME/bin
