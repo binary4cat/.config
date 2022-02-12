@@ -3,7 +3,10 @@ if not status_ok then
 	return
 end
 
-local gps = require("nvim-gps")
+local gps_ok, gps = pcall(require, "nvim-gps")
+if not gps_ok then
+	vim.notify("nivm-gps plugin not found!")
+end
 
 lualine.setup({
 	options = {

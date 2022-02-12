@@ -86,7 +86,26 @@ null_ls.setup({
 		formatting.black.with({
 			extra_args = { "--fast" },
 		}),
-		formatting.stylua,
+		formatting.stylua.with({
+			filetypes = { "lua" },
+			command = "stylua",
+			args = { "-s", "-" },
+		}),
+		formatting.clang_format.with({
+			filetypes = { "c", "cpp", "cs", "java" },
+			command = "clang-format",
+			args = {},
+		}),
+		formatting.fish_indent.with({
+			filetypes = { "fish" },
+			command = "fish_indent",
+			args = {},
+		}),
+		formatting.shfmt.with({
+			filetypes = { "sh" },
+			command = "shfmt",
+			args = { "-filename", "$FILENAME" },
+		}),
 
 		---- diagnostics----
 		-- diagnostics.flake8
@@ -104,6 +123,16 @@ null_ls.setup({
 				"--path-prefix",
 				"$ROOT",
 			},
+		}),
+		diagnostics.codespell.with({
+			filetypes = {},
+			command = "codespell",
+			args = { "-" },
+		}),
+		diagnostics.shellcheck.with({
+			filetypes = { "sh" },
+			command = "shellcheck",
+			args = { "--format", "json1", "--source-path=$DIRNAME", "--external-sources", "-" },
 		}),
 	},
 })

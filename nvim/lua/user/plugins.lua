@@ -149,14 +149,6 @@ return packer.startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 	})
 	use({
-		"lewis6991/spellsitter.nvim",
-		config = function()
-			require("spellsitter").setup({
-				enable = true,
-			})
-		end,
-	})
-	use({
 		"SmiteshP/nvim-gps",
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
