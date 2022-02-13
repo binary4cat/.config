@@ -6,6 +6,7 @@ end
 -- load_extension
 telescope.load_extension("neoclip")
 telescope.load_extension("macroscope")
+telescope.load_extension("notify")
 
 local actions = require("telescope.actions")
 

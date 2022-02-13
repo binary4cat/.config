@@ -3,6 +3,9 @@ if not status_ok then
 	return
 end
 
+-- Set default notification
+vim.notify = notify
+
 notify.setup({
 	-- Animation style (see below for details)
 	stages = "fade_in_slide_out",
@@ -21,7 +24,7 @@ notify.setup({
 
 	-- For stages that change opacity this is treated as the highlight behind the window
 	-- Set this to either a highlight group, an RGB hex value e.g. "#000000" or a function returning an RGB code for dynamic values
-	background_colour = "Normal",
+	background_colour = "#000000",
 
 	-- Minimum width for notification windows
 	minimum_width = 50,
