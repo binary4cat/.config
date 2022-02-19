@@ -124,11 +124,6 @@ null_ls.setup({
 				"$ROOT",
 			},
 		}),
-		diagnostics.codespell.with({
-			filetypes = {},
-			command = "codespell",
-			args = { "-" },
-		}),
 		diagnostics.shellcheck.with({
 			filetypes = { "sh" },
 			command = "shellcheck",
