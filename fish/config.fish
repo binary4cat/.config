@@ -6,4 +6,3 @@ end
 starship init fish | source
 # the fuck init
 # eval $(thefuck --alias)
-
