@@ -115,7 +115,9 @@ return packer.startup(function(use)
 	use({
 		"phaazon/hop.nvim",
 		branch = "v1", -- optional but strongly recommended
-		require("hop").setup(),
+		config = function()
+			require("hop").setup()
+		end,
 	})
 	use("p00f/nvim-ts-rainbow")
 	use("karb94/neoscroll.nvim")
