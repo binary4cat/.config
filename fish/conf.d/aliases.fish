@@ -13,12 +13,12 @@ alias r='echo $RANGER_LEVEL'
 alias pu='python3 -m pudb'
 alias ra='ranger'
 # ra() {
-	#if [ -z "$RANGER_LEVEL" ]
-	#then
-		#ranger
-	#else
-		#exit
-	#fi
+#if [ -z "$RANGER_LEVEL" ]
+#then
+#ranger
+#else
+#exit
+#fi
 #}
 alias s='neofetch'
 alias g='onefetch'
@@ -86,5 +86,5 @@ alias dcrunbuild="docker run --net=host --privileged --cap-add SYS_ADMIN -it"
 #### program
 alias startsunlogin="sudo systemctl start runsunloginclient.service"
 alias startdocker="sudo systemctl start docker.service"
-alias ssh="kitty +kitten ssh"
+# alias ssh="kitty +kitten ssh"
 alias mntaliyund="sudo rclone mount aliyundrivedav:/ /mnt/aliyundrive --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty --daemon --uid 1000 --gid 1000"
