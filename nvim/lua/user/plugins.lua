@@ -121,7 +121,6 @@ return packer.startup(function(use)
 	})
 	use("p00f/nvim-ts-rainbow")
 	use("karb94/neoscroll.nvim")
-	use("blackCauldron7/surround.nvim")
 	use("kosayoda/nvim-lightbulb")
 	use({
 		"weilbith/nvim-code-action-menu",
