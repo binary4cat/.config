@@ -100,6 +100,18 @@ local leader_normal_mappings = {
 		"Buffers",
 	},
 	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+	d = {
+		name = "Debug",
+		b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
+		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+		i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
+		o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
+		O = { "<cmd>lua require'dap'.step_out()<cr>", "Out" },
+		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Repl" },
+		l = { "<cmd>lua require'dap'.run_last()<cr>", "Last" },
+		u = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
+		x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
+	},
 	e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	f = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -188,6 +200,11 @@ local leader_normal_mappings = {
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
+	},
+	S = {
+		name = "Split",
+		s = { "<cmd>split<cr>", "HSplit" },
+		v = { "<cmd>vsplit<cr>", "VSplit" },
 	},
 	t = {
 		name = "+Trouble",

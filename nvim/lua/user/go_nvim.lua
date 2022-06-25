@@ -3,6 +3,13 @@ if not status_ok then
 	return
 end
 
+-- local cmp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+-- if not cmp_status_ok then
+-- 	return
+-- end
+--
+-- local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 golang.setup({
 	goimport = "gopls", -- goimport command, can be gopls[default] or goimport
 	gofmt = "gofumpt", --gofmt cmd,
