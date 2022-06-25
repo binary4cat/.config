@@ -59,6 +59,7 @@ return packer.startup(function(use)
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 	use("rcarriga/nvim-notify")
+	use("tamago324/lir.nvim")
 
 	-- Colorschemes
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -72,10 +73,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
-	use({
-		"hrsh7th/cmp-copilot",
-		requires = { "github/copilot.vim" },
-	})
+	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
 	use({
 		"David-Kunz/cmp-npm",
@@ -96,6 +94,20 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatter and linters
+	use({
+		"zbirenbaum/copilot.lua",
+		event = { "VimEnter" },
+		config = function()
+			vim.defer_fn(function()
+				require("user.copilot")
+			end, 100)
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		module = "copilot_cmp",
+	})
+	use("RRethy/vim-illuminate")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -106,6 +118,8 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("p00f/nvim-ts-rainbow")
+	use("nvim-treesitter/playground")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
@@ -119,7 +133,6 @@ return packer.startup(function(use)
 			require("hop").setup()
 		end,
 	})
-	use("p00f/nvim-ts-rainbow")
 	use("karb94/neoscroll.nvim")
 	use("kosayoda/nvim-lightbulb")
 	use({
@@ -133,6 +146,8 @@ return packer.startup(function(use)
 		},
 	})
 	use("j-hui/fidget.nvim")
+	use("kevinhwang91/nvim-bqf")
+	use("ghillb/cybu.nvim")
 
 	-- Editor tools
 	use("folke/todo-comments.nvim")
@@ -163,6 +178,17 @@ return packer.startup(function(use)
 
 	-- language
 	use("ray-x/go.nvim")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		ft = "markdown",
+	})
+
+	-- DAP
+	use("mfussenegger/nvim-dap")
+	-- use "theHamsta/nvim-dap-virtual-text"
+	use("rcarriga/nvim-dap-ui")
+	use("Pocco81/DAPInstall.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

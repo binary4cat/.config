@@ -15,35 +15,13 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
---   פּ ﯟ   some other good icons
-local kind_icons = {
-	Text = "",
-	Method = "m",
-	Function = "",
-	Constructor = "",
-	Field = "",
-	Variable = "",
-	Class = "",
-	Interface = "",
-	Module = "",
-	Property = "",
-	Unit = "",
-	Value = "",
-	Enum = "",
-	Keyword = "",
-	Snippet = "",
-	Color = "",
-	File = "",
-	Reference = "",
-	Folder = "",
-	EnumMember = "",
-	Constant = "",
-	Struct = "",
-	Event = "",
-	Operator = "",
-	TypeParameter = "",
-}
--- find more here: https://www.nerdfonts.com/cheat-sheet
+local icons = require("user.icons")
+
+local kind_icons = icons.kind
+
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
+vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
 cmp.setup({
 	snippet = {
@@ -98,16 +76,30 @@ cmp.setup({
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			vim_item.kind = kind_icons[vim_item.kind]
+
+			if entry.source.name == "cmp_tabnine" then
+				vim_item.kind = icons.misc.Robot
+				vim_item.kind_hl_group = "CmpItemKindTabnine"
+			end
+			if entry.source.name == "copilot" then
+				vim_item.kind = icons.git.Octoface
+				vim_item.kind_hl_group = "CmpItemKindCopilot"
+			end
+
+			if entry.source.name == "emoji" then
+				vim_item.kind = icons.misc.Smiley
+				vim_item.kind_hl_group = "CmpItemKindEmoji"
+			end
+
 			vim_item.menu = ({
-				nvim_lsp = " [LSP]",
-				luasnip = " [Snippet]",
-				buffer = "﬘ [Buffer]",
-				path = " [Path]",
-				copilot = "ﮧ [Copilot]",
-				nvim_lua = " [NVimLua]",
-				npm = " [NPM]",
+				nvim_lsp = "",
+				luasnip = "",
+				buffer = "",
+				path = "",
+				nvim_lua = "",
+				npm = "",
+				emoji = "",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -115,11 +107,12 @@ cmp.setup({
 	sources = {
 		{ name = "copilot" },
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
+		{ name = "cmp_tabnine" },
 		{ name = "path" },
-		{ name = "nvim_lua" },
-		{ name = "npm", keyword_length = 4 },
+		{ name = "emoji" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -127,11 +120,15 @@ cmp.setup({
 	},
 	window = {
 		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			border = "rounded",
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+		},
+		completion = {
+			border = "rounded",
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 	},
 	experimental = {
-		ghost_text = false,
-		native_menu = false,
+		ghost_text = true,
 	},
 })
