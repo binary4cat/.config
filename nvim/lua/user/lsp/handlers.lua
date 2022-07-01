@@ -1,5 +1,10 @@
 local M = {}
 
+local navic_status_ok, navic = pcall(require, "nvim-navic")
+if not navic_status_ok then
+	return
+end
+
 -- TODO: backfill this to template
 M.setup = function()
 	local signs = {
@@ -94,6 +99,8 @@ M.on_attach = function(client, bufnr)
 	-- All server use null-ls format!!!
 	client.resolved_capabilities.document_formatting = false
 	client.resolved_capabilities.document_range_formatting = false
+
+	navic.attach(client, bufnr)
 
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)

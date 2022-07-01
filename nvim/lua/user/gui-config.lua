@@ -1,5 +1,5 @@
 -- gui
-vim.o.guifont = "CaskaydiaCove_Nerd_Font_Mono,Sarasa_UI_TC,Noto_Color_Emoji,codicon_Regular:h11"
+vim.o.guifont = "FuraCode_NF_Retina,CaskaydiaCove_Nerd_Font_Mono,Sarasa_UI_TC,Noto_Color_Emoji,codicon_Regular:h11"
 
 -- neovide
 -- vim.g.neovide_transparency = 0.8

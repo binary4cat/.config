@@ -135,8 +135,9 @@ return packer.startup(function(use)
 		end,
 	})
 	use("karb94/neoscroll.nvim")
-	use("kosayoda/nvim-lightbulb")
+	use("kosayoda/nvim-lightbulb") -- code action 提示
 	use({
+		-- code action pop弹窗
 		"weilbith/nvim-code-action-menu",
 		cmd = "CodeActionMenu",
 	})
@@ -166,8 +167,9 @@ return packer.startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 	})
 	use({
-		"SmiteshP/nvim-gps",
-		requires = "nvim-treesitter/nvim-treesitter",
+		-- 显示当前代码上下文
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
 	})
 	use("romgrk/nvim-treesitter-context")
 
