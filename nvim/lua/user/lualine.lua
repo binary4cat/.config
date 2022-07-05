@@ -3,8 +3,8 @@ if not status_ok then
 	return
 end
 
-local gps_ok, gps = pcall(require, "nvim-gps")
-if not gps_ok then
+local navic_ok, navic = pcall(require, "nvim-navic")
+if not navic_ok then
 	vim.notify("nivm-gps plugin not found!")
 end
 
@@ -20,7 +20,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename", { gps.get_location, cond = gps.is_available } },
+		lualine_c = { "filename", { navic.get_location, cond = navic.is_available } },
 		lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },

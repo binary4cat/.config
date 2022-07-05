@@ -9,6 +9,7 @@ set -gx PATH /opt/fakeroot/bin $PATH
 set -gx PATH $ANDROID_HOME/tools $PATH
 set -gx PATH $ANDROID_HOME/platform-tools $PATH
 set -gx PATH $ANDROID_NDK $PATH
+set -gx PATH $HOME/.cargo/bin $PATH
 
 set XDG_CONFIG_HOME $HOME/.config
 set LOCALBIN $XDG_CONFIG_HOME/bin

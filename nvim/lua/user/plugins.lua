@@ -180,7 +180,10 @@ return packer.startup(function(use)
 	})
 
 	-- language
-	use("ray-x/go.nvim")
+	use({
+		"ray-x/go.nvim",
+		run = ":GoInstallBinaries",
+	})
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
@@ -188,11 +191,18 @@ return packer.startup(function(use)
 	})
 
 	-- DAP
-	use("mfussenegger/nvim-dap")
-	-- use "theHamsta/nvim-dap-virtual-text"
-	use("rcarriga/nvim-dap-ui")
-	use("Pocco81/DAPInstall.nvim")
-	use("theHamsta/nvim-dap-virtual-text")
+	use({
+		"mfussenegger/nvim-dap",
+		requires = {
+			"Pocco81/dap-buddy.nvim",
+			"theHamsta/nvim-dap-virtual-text",
+			"rcarriga/nvim-dap-ui",
+			"mfussenegger/nvim-dap-python",
+			"nvim-telescope/telescope-dap.nvim",
+			{ "leoluz/nvim-dap-go", module = "dap-go" },
+			{ "jbyuki/one-small-step-for-vimkind", module = "osv" },
+		},
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
