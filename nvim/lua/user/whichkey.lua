@@ -99,6 +99,7 @@ local leader_normal_mappings = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Buffers",
 	},
+	B = { "<cmd>BufferLinePick<CR>", "Buffers Pick" },
 	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	d = {
 		name = "Debug",

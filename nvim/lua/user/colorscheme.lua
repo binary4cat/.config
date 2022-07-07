@@ -1,5 +1,5 @@
 local _COLORSCHEME_ = "tokyonight"
-local _TRANSPARENT_ = true
+local _TRANSPARENT_ = false
 
 local function enable_transparent_mode()
 	vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
@@ -18,6 +18,10 @@ end
 
 if _COLORSCHEME_ == "tokyonight" then
 	vim.g.tokyonight_style = "night"
+	vim.g.tokyonight_terminal_colors = true
+	vim.g.tokyonight_italic_comments = false
+	vim.g.tokyonight_italic_keywords = false
+	vim.g.tokyonight_hide_inactive_statusline = true
 	vim.g.tokyonight_lualine_bold = true
 	vim.g.tokyonight_transparent_sidebar = true
 end

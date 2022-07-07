@@ -48,7 +48,11 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use("akinsho/bufferline.nvim")
+	use({
+		"akinsho/bufferline.nvim",
+		tag = "v2.*",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
@@ -107,6 +111,7 @@ return packer.startup(function(use)
 		"zbirenbaum/copilot-cmp",
 		module = "copilot_cmp",
 	})
+	use("github/copilot.vim")
 	use("RRethy/vim-illuminate")
 	use("b0o/SchemaStore.nvim")
 
