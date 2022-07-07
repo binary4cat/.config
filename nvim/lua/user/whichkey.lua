@@ -102,7 +102,7 @@ local leader_normal_mappings = {
 	B = { "<cmd>BufferLinePick<CR>", "Buffers Pick" },
 	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	d = {
-		name = "Debug",
+		name = "+Debug",
 		R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
 		E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
 		C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", "Conditional Breakpoint" },
@@ -129,9 +129,9 @@ local leader_normal_mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
-	F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	F = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 	g = {
-		name = "Git",
+		name = "+Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -154,7 +154,7 @@ local leader_normal_mappings = {
 	},
 	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	l = {
-		name = "LSP",
+		name = "+LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
@@ -184,16 +184,24 @@ local leader_normal_mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
+		t = {
+			name = "+Trouble",
+			x = { "<cmd>TroubleToggle<cr>", "Trouble toggle" },
+			w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Trouble workspace diagnostics" },
+			d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble document diagnostics" },
+			q = { "<cmd>TroubleToggle quickfix<cr>", "Trouble quickfix" },
+			l = { "<cmd>TroubleToggle loclist<cr>", "Trouble loclist" },
+		},
 	},
 	o = {
-		name = "SymbolsOutline",
+		name = "+SymbolsOutline",
 		o = { ":SymbolsOutlineOpen<CR>", "symbols-outline open" },
 		t = { ":SymbolsOutline<CR>", "symbols-outline toggle" },
 		c = { ":SymbolsOutlineClose<CR>", "symbols-outline close" },
 	},
 	P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	p = {
-		name = "Packer",
+		name = "+Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
 		i = { "<cmd>PackerInstall<cr>", "Install" },
 		s = { "<cmd>PackerSync<cr>", "Sync" },
@@ -202,7 +210,7 @@ local leader_normal_mappings = {
 	},
 	q = { "<cmd>Telescope macroscope<cr>", "Macros" },
 	s = {
-		name = "Search",
+		name = "+Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
@@ -214,21 +222,12 @@ local leader_normal_mappings = {
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
 	S = {
-		name = "Split",
+		name = "+Split",
 		s = { "<cmd>split<cr>", "HSplit" },
 		v = { "<cmd>vsplit<cr>", "VSplit" },
 	},
 	t = {
-		name = "+Trouble",
-		r = { "<cmd>Trouble lsp_references<cr>", "References" },
-		f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-		d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-		q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-		l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-		w = { "<cmd>Trouble workspace_diagnostics<cr>", "Diagnostics" },
-	},
-	T = {
-		name = "Terminal",
+		name = "+Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
@@ -239,19 +238,19 @@ local leader_normal_mappings = {
 	},
 	w = { "<cmd>w!<CR>", "Save" },
 	x = {
-		name = "Programming...",
+		name = "+Programming...",
 		a = { "<cmd>CodeActionMenu<cr>", "NeoVim Code Action Menu" },
 		g = {
-			name = "Golang nvim action",
+			name = "+Golang nvim action",
 			f = {
-				name = "Auto fill",
+				name = "+Auto fill",
 				t = { "<cmd>GoFillStruct<cr>", "auto fill struct" },
 				w = { "<cmd>GoFillSwitch<cr>", "fill switch" },
 				e = { "<cmd>GoIfErr<cr>", "Add if err" },
 				p = { "<cmd>GoFixPlurals<cr>", "change func foo(b int, a int, r int) -> func foo(b, a, r int)" },
 			},
 			g = {
-				name = "Go binaries install and update",
+				name = "+Go binaries install and update",
 				i = { "<cmd>GoInstallBinaries<cr>", "use go install to install all tools, skip the ones installed" },
 				u = { "<cmd>GoUpdateBinaries<cr>", "use go install to update all tools to the latest version" },
 			},

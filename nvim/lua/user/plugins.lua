@@ -114,6 +114,7 @@ return packer.startup(function(use)
 	use("github/copilot.vim")
 	use("RRethy/vim-illuminate")
 	use("b0o/SchemaStore.nvim")
+	use("folke/lsp-colors.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

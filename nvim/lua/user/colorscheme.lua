@@ -21,7 +21,6 @@ if _COLORSCHEME_ == "tokyonight" then
 	vim.g.tokyonight_terminal_colors = true
 	vim.g.tokyonight_italic_comments = false
 	vim.g.tokyonight_italic_keywords = false
-	vim.g.tokyonight_hide_inactive_statusline = true
 	vim.g.tokyonight_lualine_bold = true
 	vim.g.tokyonight_transparent_sidebar = true
 end
