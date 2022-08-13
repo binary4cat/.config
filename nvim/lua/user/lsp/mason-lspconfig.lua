@@ -10,8 +10,75 @@ end
 
 mason_lspconf.setup({
 	ensure_installed = {
-		"dockerfile-language-server",
+		---------- LSP ----------
+		"awk_ls", -- awk-language-server
+		"bashls", -- bash-language-server
+		"clangd",
+		"cmake", -- cmake-language-server
+		"cssls", -- css-lsp
+		"cssmodules_ls", -- cssmodules-language-server
+		"diagnosticls", -- diagnostic-languageserver
+		"dockerls", -- dockerfile-language-server
+		"dotls", -- dot-language-server
+		"eslint", -- eslint-lsp
+		"golangci_lint_ls", -- golangci-lint-langserver
 		"gopls",
+		"html",
+		"jsonls", -- json-lsp
+		"marksman", -- markdown lsp
+		"pylsp", -- python-lsp-server
+		"pyright", -- 	pyright
+		"remark_ls", -- A language server to lint and format markdown files with remark.
+		"rust_analyzer",
+		"sqls",
+		"sumneko_lua", -- lua-language-server
+		"terraformls",
+		"tsserver", -- typescript-language-server
+		"vimls", -- vim-language-server
+		"volar", -- vue-language-server
+		"yamlls",
+		---------- DAP ----------
+		"chrome-debug-adapter",
+		"mockdebug",
+		"cpptools",
+		"bash-debug-adapter",
+		"delve",
+		"go-debug-adapter",
+		---------- Linter ----------
+		"textlint",
+		"sqlfluff",
+		"vulture",
+		"cmakelang",
+		"codespell",
+		"editorconfig-checker",
+		"eslint_d",
+		"flake8",
+		"gitlint",
+		"golangci-lint",
+		"luacheck",
+		"markdownlint",
+		"pylint",
+		"revive",
+		"shellcheck",
+		"shellharden",
+		"yamllint",
+		---------- Formatter ----------
+		"luaformatter",
+		"prettierd",
+		"fixjson",
+		"prettier",
+		"golines",
+		"autopep8",
+		"clang-format",
+		"cmakelang",
+		"gofumpt",
+		"goimports",
+		"jq",
+		"markdownlint",
+		"shellharden",
+		"shfmt",
+		"sql-formatter",
+		"stylua",
 	},
 	automatic_installation = false,
 })
