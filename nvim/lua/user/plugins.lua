@@ -154,7 +154,7 @@ return packer.startup(function(use)
 			{ "nvim-telescope/telescope.nvim" },
 		},
 	})
-	use("j-hui/fidget.nvim")
+	use("j-hui/fidget.nvim") -- Standalone UI for nvim-lsp progress. Eye candy for the impatient.
 	use("kevinhwang91/nvim-bqf")
 	use("ghillb/cybu.nvim")
 
