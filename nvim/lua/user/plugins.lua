@@ -116,6 +116,11 @@ return packer.startup(function(use)
 	use("folke/lsp-colors.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+	use({
+		"tzachar/cmp-tabnine",
+		run = "./install.sh",
+		requires = "hrsh7th/nvim-cmp",
+	})
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -179,6 +184,12 @@ return packer.startup(function(use)
 		requires = "neovim/nvim-lspconfig",
 	})
 	use("romgrk/nvim-treesitter-context")
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	}) -- edit CSS or HTML files color highlighter
 
 	-- Network
 	use({
@@ -196,6 +207,7 @@ return packer.startup(function(use)
 		run = "cd app && npm install",
 		ft = "markdown",
 	})
+	use("simrat39/rust-tools.nvim")
 
 	-- DAP
 	use({

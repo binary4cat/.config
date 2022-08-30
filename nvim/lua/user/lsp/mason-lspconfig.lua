@@ -45,6 +45,7 @@ mason_lspconf.setup({
 		"delve",
 		"go-debug-adapter",
 		---------- Linter ----------
+    "cspell",
 		"textlint",
 		"sqlfluff",
 		"vulture",
