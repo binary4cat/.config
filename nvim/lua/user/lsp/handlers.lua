@@ -1,10 +1,5 @@
 local M = {}
 
-local navic_status_ok, navic = pcall(require, "nvim-navic")
-if not navic_status_ok then
-	return
-end
-
 -- TODO: backfill this to template
 M.setup = function()
 	local signs = {
@@ -51,7 +46,7 @@ end
 
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.document_highlight then
 		vim.api.nvim_exec(
 			[[
       augroup lsp_document_highlight
@@ -92,15 +87,13 @@ end
 M.on_attach = function(client, bufnr)
 	-- if client.name == "tsserver" then
 	-- 	-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
-	-- 	client.resolved_capabilities.document_formatting = false
-	-- 	client.resolved_capabilities.document_range_formatting = false
+	-- 	client.server_capabilities.document_formatting = false
+	-- 	client.server_capabilities.document_range_formatting = false
 	-- end
 
 	-- All server use null-ls format!!!
-	client.resolved_capabilities.document_formatting = false
-	client.resolved_capabilities.document_range_formatting = false
-
-	navic.attach(client, bufnr)
+	client.server_capabilities.document_formatting = false
+	client.server_capabilities.document_range_formatting = false
 
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)

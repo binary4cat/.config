@@ -12,6 +12,13 @@ local icons = require("utils.icons")
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 nvim_tree.setup({
 	hijack_directories = {
 		enable = false,
@@ -122,8 +129,7 @@ nvim_tree.setup({
 		timeout = 500,
 	},
 	view = {
-		width = 30,
-		height = 30,
+		adaptive_size = true,
 		hide_root_folder = false,
 		side = "left",
 		-- auto_resize = true,

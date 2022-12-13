@@ -88,11 +88,11 @@ local leader_visual_opts = {
 }
 
 local leader_visual_mappings = {
-	["/"] = { "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
+	["/"] = { "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "Comment" },
 }
 
 local leader_normal_mappings = {
-	["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
+	["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", "Comment" },
 
 	a = { "<cmd>Alpha<cr>", "Alpha" },
 	b = {
@@ -122,7 +122,7 @@ local leader_normal_mappings = {
 			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 			"Find files",
 		},
-		t = { "<cmd>Telescope live_grep", "Find Text" },
+		t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
 		i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 		l = { "<cmd>Telescope resume<cr>", "Last Search" },

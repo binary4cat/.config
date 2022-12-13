@@ -16,7 +16,7 @@ local async_formatting = function(bufnr)
 	vim.lsp.buf_request(
 		bufnr,
 		"textDocument/formatting",
-		{ textDocument = { uri = vim.uri_from_bufnr(bufnr) } },
+		vim.lsp.util.make_formatting_params({}),
 		function(err, res, ctx)
 			if err then
 				local err_msg = type(err) == "string" and err or err.message

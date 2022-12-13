@@ -116,6 +116,7 @@ return packer.startup(function(use)
 	use("folke/lsp-colors.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+	use("WhoIsSethDaniel/mason-tool-installer.nvim")
 	use({
 		"tzachar/cmp-tabnine",
 		run = "./install.sh",
@@ -177,11 +178,6 @@ return packer.startup(function(use)
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
-	})
-	use({
-		-- 显示当前代码上下文
-		"SmiteshP/nvim-navic",
-		requires = "neovim/nvim-lspconfig",
 	})
 	use("romgrk/nvim-treesitter-context")
 	use({
