@@ -1,4 +1,9 @@
-vim.g.symbols_outline = {
+local status_ok, symbols_outline = pcall(require, "symbols-outline")
+if not status_ok then
+	return
+end
+
+symbols_outline.setup({
 	highlight_hovered_item = true,
 	show_guides = true,
 	auto_preview = true,
@@ -49,4 +54,4 @@ vim.g.symbols_outline = {
 		Operator = { icon = "+", hl = "TSOperator" },
 		TypeParameter = { icon = "𝙏", hl = "TSParameter" },
 	},
-}
+})
