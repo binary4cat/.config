@@ -46,4 +46,4 @@ require("user.toggleterm")
 require("user.treesitter")
 require("user.trouble_nvim")
 require("user.whichkey")
-require("user.winbar")
+--[[ require("user.winbar") ]]
