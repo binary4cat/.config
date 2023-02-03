@@ -64,6 +64,13 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 	use("rcarriga/nvim-notify")
 	use("tamago324/lir.nvim")
+	use({
+		"dstein64/vim-startuptime",
+		run = ":StartupTime",
+		config = function()
+			vim.g.startuptime_tries = 10
+		end,
+	})
 
 	-- Colorschemes
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -219,6 +226,34 @@ return packer.startup(function(use)
 
 	-- useless
 	use({ "tamton-aquib/zone.nvim" })
+
+	-- utils
+	use({
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		module = "persistence",
+		config = function()
+			require("persistence").setup()
+		end,
+	})
+
+	-- UI
+	use("stevearc/dressing.nvim")
+	use({
+		"folke/noice.nvim",
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
+	})
+	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

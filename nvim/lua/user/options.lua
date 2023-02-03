@@ -45,3 +45,8 @@ end
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
+
+vim.g.python_host_skip_check = 1
+vim.g.python_host_prog = "/usr/local/bin/python"
+vim.g.python3_host_skip_check = 1
+vim.g.python3_host_prog = "/usr/local/bin/python3"

@@ -97,6 +97,11 @@ M.on_attach = function(client, bufnr)
 
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
+
+	-- nvim-navic
+	if client.server_capabilities.documentSymbolProvider then
+		require("nvim-navic").attach(client, bufnr)
+	end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
