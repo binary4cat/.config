@@ -4,7 +4,7 @@ return {
     opts = {
       -- a list of all tools you want to ensure are installed upon
       -- start; they should be the names Mason uses for each tool
-      ensure_installed = dofile(vim.fn.stdpath("config") .. "/configs/lsp/mason/installer.lua"),
+      ensure_installed = require("plugins.extras.lsp.mason.installer"),
       -- if set to true this will check each tool for updates. If updates
       -- are available the tool will be updated. This setting does not
       -- affect :MasonToolsUpdate or :MasonToolsInstall.
@@ -35,16 +35,10 @@ return {
       local nls_diagnostics = nls.builtins.diagnostics
       local nls_formatting = nls.builtins.formatting
       local diagnostics = {
-        nls_diagnostics.golangci_lint.with(
-          dofile(vim.fn.stdpath("config") .. "/configs/lsp/null-ls/diagnostics/golangci_lint.lua")
-        ),
+        nls_diagnostics.golangci_lint.with(require("plugins.extras.lsp.null-ls.diagnostics.golangci_lint")),
       }
       local formatting = {
-        nls_formatting.goimports.with({
-          filetypes = { "go" },
-          command = "goimports",
-          args = {},
-        }),
+        nls_formatting.goimports.with(require("plugins.extras.lsp.null-ls.formatting.goimports")),
       }
       if type(opts.sources) == "table" then
         opts.sources = vim.list_extend(opts.sources, diagnostics)
@@ -56,7 +50,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       local server_opts = {
-        gopls = dofile(vim.fn.stdpath("config") .. "/configs/lsp/server/gopls.lua"),
+        gopls = require("plugins.extras.lsp.server.gopls"),
       }
       if type(opts.servers) == "table" then
         opts.servers = vim.list_extend(opts.servers, server_opts)
