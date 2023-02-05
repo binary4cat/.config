@@ -35,9 +35,11 @@ return {
       local nls_diagnostics = nls.builtins.diagnostics
       local nls_formatting = nls.builtins.formatting
       local diagnostics = {
+        -- 需要增加的linter加载这里
         nls_diagnostics.golangci_lint.with(require("plugins.extras.lsp.null-ls.diagnostics.golangci_lint")),
       }
       local formatting = {
+        -- 需要增加的formatter加载这里
         nls_formatting.goimports.with(require("plugins.extras.lsp.null-ls.formatting.goimports")),
       }
       if type(opts.sources) == "table" then
@@ -50,6 +52,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       local server_opts = {
+        -- 需要配置的LSP服务器配置，加载在这里
         gopls = require("plugins.extras.lsp.server.gopls"),
       }
       if type(opts.servers) == "table" then
