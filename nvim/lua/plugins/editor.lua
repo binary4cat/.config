@@ -23,19 +23,6 @@ return {
     end,
   },
 
-  -- 优化的复制粘贴
-  {
-    "gbprod/yanky.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("yanky").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
-    end,
-  },
-
   -- 将代码展开或者合并成一行  :TSJToggle
   {
     "Wansmer/treesj",
@@ -47,44 +34,36 @@ return {
     end,
   },
 
-  -- 折叠代码，按下z键就可以激活
+  -- add folding range to capabilities
   {
-    "kevinhwang91/nvim-ufo",
-    event = "VeryLazy",
-    dependencies = { "kevinhwang91/promise-async" },
-    config = function()
-      vim.o.foldcolumn = "1" -- '0' is not bad
-      vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-      vim.o.foldlevelstart = 99
-      vim.o.foldenable = true
-
-      -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
-      vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-      vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.foldingRange = {
-        dynamicRegistration = false,
-        lineFoldingOnly = true,
-      }
-      local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'}
-      for _, ls in ipairs(language_servers) do
-        require("lspconfig")[ls].setup({
-          capabilities = capabilities,
-          -- you can add other fields for setting up lsp server in this table
-        })
-      end
-      require("ufo").setup()
-    end,
+    "neovim/nvim-lspconfig",
+    opts = {
+      capabilities = {
+        textDocument = {
+          foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true,
+          },
+        },
+      },
+    },
   },
 
-  -- 预览折叠代码，在折叠代码处，按下h键就可以不打开折叠的情况下显示代码预览，按l键打开折叠代码
+  -- add nvim-ufo
   {
-    "anuvyklack/fold-preview.nvim",
-    -- event = "VeryLazy",
-    dependencies = { "anuvyklack/keymap-amend.nvim" },
-    config = function()
-      require("fold-preview").setup({})
+    "kevinhwang91/nvim-ufo",
+    dependencies = "kevinhwang91/promise-async",
+    event = "BufReadPost",
+    opts = {},
+
+    init = function()
+      -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+      vim.keymap.set("n", "zR", function()
+        require("ufo").openAllFolds()
+      end)
+      vim.keymap.set("n", "zM", function()
+        require("ufo").closeAllFolds()
+      end)
     end,
   },
 }
