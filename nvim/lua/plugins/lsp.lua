@@ -22,6 +22,7 @@ return {
       start_delay = 3000, -- 3 second delay
     },
     lazy = true,
+    event = "VeryLazy",
     config = function(_, opts)
       require("mason-tool-installer").setup(opts)
     end,

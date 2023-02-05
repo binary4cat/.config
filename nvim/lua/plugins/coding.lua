@@ -2,7 +2,7 @@ return {
   -- golang
   {
     "ray-x/go.nvim",
-    lazy = true,
+    event = "VeryLazy",
     config = function()
       require("go").setup()
     end,
@@ -11,7 +11,7 @@ return {
   -- YAML
   {
     "someone-stole-my-name/yaml-companion.nvim",
-    lazy = true,
+    event = "VeryLazy",
     dependencies = {
       { "neovim/nvim-lspconfig" },
       { "nvim-lua/plenary.nvim" },
