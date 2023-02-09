@@ -18,6 +18,7 @@ return {
           "spectre_panel",
           "startuptime",
           "Outline",
+          "help",
         },
         on_highlights = function(hl, c)
           hl.CursorLineNr = { fg = c.orange, bold = true }
