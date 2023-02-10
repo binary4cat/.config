@@ -52,6 +52,8 @@ ranger/__pycache__/commands.cpython-39.opt-1.pyc
 
 !/wallpaper/
 
+!/wezterm/
+
 !/scripts/
 
 !/.screenlayout/
