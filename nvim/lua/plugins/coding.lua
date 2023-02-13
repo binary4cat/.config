@@ -1,10 +1,25 @@
 return {
+  --- languages config ---
   -- golang
   {
     "ray-x/go.nvim",
     event = "VeryLazy",
     config = function()
       require("go").setup()
+    end,
+  },
+
+  -- rust
+  {
+    "simrat39/rust-tools.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      require("rust-tools").setup()
     end,
   },
 
@@ -21,17 +36,7 @@ return {
       require("telescope").load_extension("yaml_schema")
     end,
   },
-  {
-    "nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-emoji",
-    },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
-    end,
-  },
+
   -- better text objects
   {
     "echasnovski/mini.ai",
