@@ -38,15 +38,18 @@ return {
       local diagnostics = {
         -- 需要增加的linter加载这里
         nls_diagnostics.golangci_lint.with(require("plugins.extras.lsp.null-ls.diagnostics.golangci_lint")),
+        nls_diagnostics.buf.with(require("plugins.extras.lsp.null-ls.diagnostics.buf")),
       }
       local formatting = {
         -- 需要增加的formatter加载这里
         nls_formatting.goimports.with(require("plugins.extras.lsp.null-ls.formatting.goimports")),
+        nls_formatting.buf.with(require("plugins.extras.lsp.null-ls.formatting.buf")),
       }
       if type(opts.sources) == "table" then
         opts.sources = vim.list_extend(opts.sources, diagnostics)
         opts.sources = vim.list_extend(opts.sources, formatting)
       end
+      opts.debug = true
     end,
   },
   {
@@ -55,6 +58,8 @@ return {
       local server_opts = {
         -- 需要配置的LSP服务器配置，加载在这里
         gopls = require("plugins.extras.lsp.server.gopls"),
+        bufls = require("plugins.extras.lsp.server.bufls"),
+        -- clangd = require("plugins.extras.lsp.server.clangd"),
       }
       if type(opts.servers) == "table" then
         opts.servers = vim.list_extend(opts.servers, server_opts)

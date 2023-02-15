@@ -6,7 +6,8 @@ return {
   ---------- LSP ----------
   "awk-language-server",
   "bash-language-server",
-  "clangd",
+  "buf-language-server",
+  -- "clangd",
   "cmake-language-server",
   "css-lsp",
   "cssmodules-language-server",
@@ -25,6 +26,7 @@ return {
   "rust-analyzer",
   "sqls",
   "lua-language-server",
+  "taplo",
   "terraform-ls",
   "typescript-language-server",
   "vim-language-server",
@@ -58,6 +60,7 @@ return {
   "shellharden",
   "yamllint",
   ---------- Formatter ----------
+  "buf",
   "luaformatter",
   "prettierd",
   "fixjson",
