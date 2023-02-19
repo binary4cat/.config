@@ -76,7 +76,7 @@ return {
         callback = function()
           -- Because the l key conflicts with the alpha plugin, the case of non-loading alpha is handled here
           if not vim.bo.ft == "alpha" then
-            require("lazy").load({ plugins = { "fold-preview.lua" } })
+            require("lazy").load({ plugins = { "fold-preview.nvim" } })
           end
         end,
       })
@@ -92,5 +92,18 @@ return {
   {
     "sitiom/nvim-numbertoggle",
     event = "VeryLazy",
+  },
+
+  -- 根据行长度自动显示或隐藏行长度标尺
+  {
+    "m4xshen/smartcolumn.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("smartcolumn").setup({
+        colorcolumn = 120,
+        disabled_filetypes = { "help", "text", "markdown" },
+        limit_to_window = true,
+      })
+    end,
   },
 }
