@@ -36,12 +36,12 @@ return {
       local nls_diagnostics = nls.builtins.diagnostics
       local nls_formatting = nls.builtins.formatting
       local diagnostics = {
-        -- 需要增加的linter加载这里
+        -- The linter that needs to be added is loaded here
         nls_diagnostics.golangci_lint.with(require("plugins.extras.lsp.null-ls.diagnostics.golangci_lint")),
         nls_diagnostics.buf.with(require("plugins.extras.lsp.null-ls.diagnostics.buf")),
       }
       local formatting = {
-        -- 需要增加的formatter加载这里
+        -- The formatter that needs to be added is loaded here
         nls_formatting.goimports.with(require("plugins.extras.lsp.null-ls.formatting.goimports")),
         nls_formatting.buf.with(require("plugins.extras.lsp.null-ls.formatting.buf")),
       }
@@ -56,7 +56,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       local server_opts = {
-        -- 需要配置的LSP服务器配置，加载在这里
+        -- The LSP server configuration that needs to be configured is loaded here
         gopls = require("plugins.extras.lsp.server.gopls"),
         bufls = require("plugins.extras.lsp.server.bufls"),
         -- clangd = require("plugins.extras.lsp.server.clangd"),
