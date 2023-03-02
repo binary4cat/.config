@@ -227,59 +227,71 @@ return {
     config = true,
   },
 
-  {
-    "nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-emoji",
-      "zbirenbaum/copilot-cmp",
-    },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      local cmp_conf = cmp.get_config()
-      opts.sources = {
-        { name = "copilot", group_index = 2 },
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "luasnip", group_index = 2 },
-        { name = "buffer", group_index = 2 },
-        { name = "path", group_index = 2 },
-        { name = "emoji", group_index = 2 },
-      }
-      cmp_conf.sorting.priority_weight = 2
-      cmp_conf.sorting.comparators = vim.list_extend(cmp_conf.sorting.comparators, {
-        require("copilot_cmp.comparators").prioritize,
-        require("copilot_cmp.comparators").score,
-        -- Below is the default comparitor list and order for nvim-cmp
-        cmp.config.compare.offset,
-        -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
-        cmp.config.compare.exact,
-        cmp.config.compare.score,
-        cmp.config.compare.recently_used,
-        cmp.config.compare.locality,
-        cmp.config.compare.kind,
-        cmp.config.compare.sort_text,
-        cmp.config.compare.length,
-        cmp.config.compare.order,
-      })
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    event = "VeryLazy",
-    dependencies = {
-      "copilot.lua",
-    },
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
+  -- {
+  --   "nvim-cmp",
+  --   dependencies = {
+  --     "hrsh7th/cmp-emoji",
+  --     "zbirenbaum/copilot-cmp",
+  --   },
+  --   ---@param opts cmp.ConfigSchema
+  --   opts = function(_, opts)
+  --     local cmp = require("cmp")
+  --     local cmp_conf = cmp.get_config()
+  --     opts.sources = {
+  --       { name = "copilot", group_index = 2 },
+  --       { name = "nvim_lsp", group_index = 2 },
+  --       { name = "luasnip", group_index = 2 },
+  --       { name = "buffer", group_index = 2 },
+  --       { name = "path", group_index = 2 },
+  --       { name = "emoji", group_index = 2 },
+  --     }
+  --     cmp_conf.sorting.priority_weight = 2
+  --     cmp_conf.sorting.comparators = vim.list_extend(cmp_conf.sorting.comparators, {
+  --       require("copilot_cmp.comparators").prioritize,
+  --       require("copilot_cmp.comparators").score,
+  --       -- Below is the default comparitor list and order for nvim-cmp
+  --       cmp.config.compare.offset,
+  --       -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+  --       cmp.config.compare.exact,
+  --       cmp.config.compare.score,
+  --       cmp.config.compare.recently_used,
+  --       cmp.config.compare.locality,
+  --       cmp.config.compare.kind,
+  --       cmp.config.compare.sort_text,
+  --       cmp.config.compare.length,
+  --       cmp.config.compare.order,
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "copilot.lua",
+  --   },
+  --   config = function()
+  --     require("copilot_cmp").setup()
+  --   end,
+  -- },
   {
     "zbirenbaum/copilot.lua",
-    event = "VeryLazy",
+    cmd = "Copilot",
+    event = "InsertEnter",
     config = function()
       require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          debounce = 75,
+          keymap = {
+            accept = "<M-\\>",
+            accept_word = false,
+            accept_line = false,
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+          },
+        },
       })
     end,
   },
