@@ -5,7 +5,7 @@ return {
     priority = 1000,
     opts = function()
       return {
-        style = "moon",
+        style = "night",
         -- transparent = true,
         -- styles = {
         --   sidebars = "transparent",
@@ -35,6 +35,21 @@ return {
           hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
         end,
       }
+    end,
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = function()
+      return {
+        flavour = "mocha",
+      }
+    end,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = function(_, opts)
+      opts.colorscheme = "catppuccin"
     end,
   },
 }
