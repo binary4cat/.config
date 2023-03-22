@@ -100,9 +100,10 @@ return {
     event = "BufReadPost",
     config = function()
       require("smartcolumn").setup({
-        colorcolumn = 120,
-        disabled_filetypes = { "help", "text", "markdown" },
-        limit_to_window = true,
+        colorcolumn = "120",
+        disabled_filetypes = { "help", "text", "markdown", "NeoTree", "lazy", "mason", "help" },
+        custom_colorcolumn = {},
+        scope = "window",
       })
     end,
   },

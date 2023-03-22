@@ -9,7 +9,9 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require("go").setup()
+      require("go").setup({
+        go = "go1.19.7",
+      })
     end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
