@@ -75,14 +75,24 @@ return {
     event = "WinNew",
     dependencies = {
       { "anuvyklack/middleclass" },
-      { "anuvyklack/animation.nvim", enabled = false },
+      { "anuvyklack/animation.nvim" },
     },
     keys = { { "<leader>Z", "<cmd>WindowsMaximize<cr>", desc = "Zoom" } },
     config = function()
-      vim.o.winwidth = 5
+      vim.o.winwidth = 10
+      vim.o.winminwidth = 10
       vim.o.equalalways = false
       require("windows").setup({
-        animation = { enable = false, duration = 150 },
+        ignore = {
+          buftype = { "quickfix" },
+          filetype = { "NvimTree", "neo-tree", "undotree", "gundo", "aerial" },
+        },
+        animation = {
+          enable = true,
+          duration = 150,
+          easing = "in_out_sine",
+          fps = 120,
+        },
       })
     end,
   },
@@ -129,7 +139,10 @@ return {
     config = function()
       math.randomseed(os.time())
       local theme = ({ "stars", "snow" })[math.random(1, 3)]
-      require("drop").setup({ theme = theme })
+      require("drop").setup({
+        theme = theme,
+        screensaver = 1000 * 60 * 30, -- show after 5 minutes. Set to false, to disable
+      })
     end,
   },
 
