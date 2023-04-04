@@ -29,7 +29,8 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 
 -- GUI config
-vim.o.guifont = "CaskaydiaCove_Nerd_Font_Mono,JetBrainsMonoNL_NFM,Sarasa_UI_TC,Noto_Color_Emoji,codicon_Regular:h10"
+vim.o.guifont =
+  "FiraCode_Nerd_Font_Mono,CaskaydiaCove_Nerd_Font_Mono,JetBrainsMonoNL_NFM,Sarasa_UI_TC,Segoe_UI_Emoji,Noto_Color_Emoji,codicon_Regular:h11"
 
 if vim.g.neovide then
   -- vim.g.neovide_transparency = 0.8

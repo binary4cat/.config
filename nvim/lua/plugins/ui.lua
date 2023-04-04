@@ -85,7 +85,7 @@ return {
       require("windows").setup({
         ignore = {
           buftype = { "quickfix" },
-          filetype = { "NvimTree", "neo-tree", "undotree", "gundo", "aerial" },
+          filetype = { "NvimTree", "neo-tree", "undotree", "gundo", "aerial", "diffview" },
         },
         animation = {
           enable = true,
