@@ -49,6 +49,9 @@ return {
         opts.sources = vim.list_extend(opts.sources, diagnostics)
         opts.sources = vim.list_extend(opts.sources, formatting)
       end
+
+      -- builtins are loaded here
+      table.insert(opts.sources, nls.builtins.formatting.prettierd)
       opts.debug = true
     end,
   },
@@ -64,6 +67,12 @@ return {
       if type(opts.servers) == "table" then
         opts.servers = vim.list_extend(opts.servers, server_opts)
       end
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      table.insert(opts.ensure_installed, "prettierd")
     end,
   },
 }

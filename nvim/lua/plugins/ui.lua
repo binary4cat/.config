@@ -1,7 +1,7 @@
 return {
   {
     "goolord/alpha-nvim",
-    opts = function(_, opts)
+    opts = function(_, dashboard)
       local logo = [[
 	    ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗
 	    ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║
@@ -12,7 +12,7 @@ return {
 
 
       ]]
-      opts.section.header.val = vim.split(logo, "\n", { trimempty = true })
+      dashboard.section.header.val = vim.split(logo, "\n", { trimempty = true })
     end,
   },
 
@@ -161,5 +161,25 @@ return {
   {
     "f-person/git-blame.nvim",
     event = "VeryLazy",
+  },
+
+  {
+    "folke/which-key.nvim",
+    opts = function(_, opts)
+      opts.defaults["<leader>h"] = { "<cmd>nohlsearch<CR>", "No Highlight" }
+    end,
+  },
+
+  {
+    "ahmedkhalf/project.nvim",
+    opts = {},
+    event = "VeryLazy",
+    config = function(_, opts)
+      require("project_nvim").setup(opts)
+      require("telescope").load_extension("projects")
+    end,
+    keys = {
+      { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+    },
   },
 }

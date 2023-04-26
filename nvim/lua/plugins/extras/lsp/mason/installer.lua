@@ -24,7 +24,7 @@ return {
   "pyright",
   "remark-language-server", -- A language server to lint and format markdown files with remark.
   "rust-analyzer",
-  "sqls",
+  "sqlls",
   "lua-language-server",
   "taplo",
   "terraform-ls",
