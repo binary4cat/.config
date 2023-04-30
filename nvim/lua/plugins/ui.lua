@@ -164,13 +164,6 @@ return {
   },
 
   {
-    "folke/which-key.nvim",
-    opts = function(_, opts)
-      opts.defaults["<leader>h"] = { "<cmd>nohlsearch<CR>", "No Highlight" }
-    end,
-  },
-
-  {
     "ahmedkhalf/project.nvim",
     opts = {},
     event = "VeryLazy",
