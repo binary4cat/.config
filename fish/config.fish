@@ -6,3 +6,6 @@ end
 starship init fish | source
 # the fuck init
 # eval $(thefuck --alias)
+
+# use vim model
+fish_vi_key_bindings
