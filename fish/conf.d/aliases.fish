@@ -45,7 +45,8 @@ alias r="sudo ranger"
 alias cibn="cd /data/develop/starschina/cibn-kernel"
 alias mcp="cd /data/develop/starschina/cibn-kernel/mcp"
 ## Colorize the ls output ##
-alias ls='ls --color=auto'
+# alias ls='ls --color=auto'
+alias ls="exa -al --color=always --group-directories-first"
 ## Use a long listing format ##
 alias ll='ls -la'
 ## Show hidden files ##
