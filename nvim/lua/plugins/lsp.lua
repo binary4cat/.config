@@ -67,6 +67,9 @@ return {
       if type(opts.servers) == "table" then
         opts.servers = vim.list_extend(opts.servers, server_opts)
       end
+
+      -- lsp timeout error
+      opts.format.timeout_ms = 10000
     end,
   },
   {

@@ -13,6 +13,7 @@ return {
         unusedparams = true,
       },
       staticcheck = true,
+      semanticTokens = true,
       -- usePlaceholders = true,
     },
   },
