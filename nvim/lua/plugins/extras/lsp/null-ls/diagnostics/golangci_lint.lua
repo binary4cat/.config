@@ -11,5 +11,6 @@ return {
     "$DIRNAME",
     "--path-prefix",
     "$ROOT",
+    "--timeout=10m",
   },
 }
