@@ -75,24 +75,14 @@ return {
     event = "WinNew",
     dependencies = {
       { "anuvyklack/middleclass" },
-      { "anuvyklack/animation.nvim" },
+      { "anuvyklack/animation.nvim", enabled = false },
     },
     keys = { { "<leader>Z", "<cmd>WindowsMaximize<cr>", desc = "Zoom" } },
     config = function()
-      vim.o.winwidth = 10
-      vim.o.winminwidth = 10
+      vim.o.winwidth = 5
       vim.o.equalalways = false
       require("windows").setup({
-        ignore = {
-          buftype = { "quickfix" },
-          filetype = { "NvimTree", "neo-tree", "undotree", "gundo", "aerial", "diffview" },
-        },
-        animation = {
-          enable = true,
-          duration = 150,
-          easing = "in_out_sine",
-          fps = 120,
-        },
+        animation = { enable = false, duration = 150 },
       })
     end,
   },
@@ -125,12 +115,11 @@ return {
     event = "VeryLazy",
     opts = {
       themes = {
-        markdown = { colorscheme = "tokyonight-storm" },
-        help = { colorscheme = "oxocarbon", background = "dark" },
+        markdown = { colorscheme = "catppuccin" },
+        help = { colorscheme = "catppuccin", background = "dark" },
       },
     },
   },
-
   -- silly drops
   {
     "folke/drop.nvim",

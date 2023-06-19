@@ -2,7 +2,7 @@ return {
   {
     "folke/which-key.nvim",
     opts = function(_, opts)
-      opts.defaults["<leader>h"] = { "<cmd>nohlsearch<CR>", "No Highlight" }
+      -- opts.defaults["<leader>h"] = { "<cmd>nohlsearch<CR>", "No Highlight" }
       -- rest.nvim
       opts.defaults["<leader>cR"] = {
         name = "+rest.nvim",

@@ -15,7 +15,6 @@ return {
   "dockerfile-language-server",
   "dot-language-server",
   "eslint-lsp",
-  "golangci-lint-langserver",
   "gopls",
   "html-lsp",
   "json-lsp",
@@ -32,6 +31,7 @@ return {
   "vim-language-server",
   "vue-language-server",
   "yaml-language-server",
+  "zls",
 
   ---------- DAP ----------
   "chrome-debug-adapter",
