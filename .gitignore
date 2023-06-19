@@ -39,7 +39,7 @@ ranger/plugins/devicons_linemode.pyo
 ranger/__pycache__/commands.cpython-39.opt-1.pyc
 
 !/rofi/
-
+!/zellij/
 !/zsh/
 
 !.p10k.zsh
