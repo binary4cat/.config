@@ -24,6 +24,8 @@ return {
           },
         },
       }
+
+      opts.inlay_hints.enabled = true
     end,
   },
 }
