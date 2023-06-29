@@ -9,3 +9,6 @@ starship init fish | source
 
 # use vim model
 fish_vi_key_bindings
+
+# theme
+set -g theme tokyonight_storm
