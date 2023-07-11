@@ -71,6 +71,7 @@ return {
   "cmakelang",
   "gofumpt",
   "goimports",
+  "goimports-reviser",
   "jq",
   "markdownlint",
   "shellharden",

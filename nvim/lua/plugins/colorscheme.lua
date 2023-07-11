@@ -5,7 +5,6 @@ return {
     priority = 1000,
     opts = function(_, opts)
       opts.style = "moon"
-      opts.dim_inactive = true
       opts.sidebars = {
         "qf",
         "vista_kind",
