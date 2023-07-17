@@ -11,23 +11,17 @@ return {
         opts.servers = vim.list_extend(opts.servers, server_opts)
       end
 
-      -- builtin servers
-      opts.servers.gopls = require("plugins.extras.lsp.server.gopls")
+      -- builtin gopls servers
+      opts.servers.gopls.settings.gopls.usePlaceholders = false
 
       -- lsp timeout error
       opts.format.timeout_ms = 10000
 
       -- fold only by indentation
-      opts.capabilities = {
-        textDocument = {
-          foldingRange = {
-            dynamicRegistration = false,
-            lineFoldingOnly = true,
-          },
-        },
-      }
+      opts.capabilities.textDocument.foldingRange.dynamicRegistration = false
+      opts.capabilities.textDocument.foldingRange.lineFoldingOnly = true
 
-      opts.inlay_hints.enabled = true
+      opts.inlay_hints.enabled = false
     end,
   },
 }
