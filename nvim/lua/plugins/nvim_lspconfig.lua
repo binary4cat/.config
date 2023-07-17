@@ -18,8 +18,12 @@ return {
       opts.format.timeout_ms = 10000
 
       -- fold only by indentation
-      opts.capabilities.textDocument.foldingRange.dynamicRegistration = false
-      opts.capabilities.textDocument.foldingRange.lineFoldingOnly = true
+      opts.capabilities.textDocument = {
+        foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true,
+        },
+      }
 
       opts.inlay_hints.enabled = false
     end,
