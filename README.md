@@ -1,17 +1,17 @@
-# My all dot files and all useful config
+# Linux ENV
 
 ## WM
 
 - WM: [dwm](https://github.com/binary4cat/suckless)
 - Font: FiraCode Nerd Font Medium
 - Terminal: Kitty
-	- Shell: fish
-		-	starship
-	- Font: FiraCode Nerd Font Mono
-	- Task Manager: Htop
-	- File Manager: Ranger
-	- Editor: Neovim
-- Launcher: dwm 
+  - Shell: fish
+    - starship
+  - Font: FiraCode Nerd Font Mono
+  - Task Manager: Htop
+  - File Manager: Ranger
+  - Editor: Neovim
+- Launcher: dwm
 - Notifications: Dunst
 - Clipboard Manager: CopyQ
 - Screenshooter: Flameshot
