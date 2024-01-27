@@ -106,25 +106,25 @@ return {
   },
 
   -- 将没有使用的function/method/var等变暗
-  {
-    "zbirenbaum/neodim",
-    event = "LspAttach",
-    config = function()
-      require("neodim").setup({
-        alpha = 0.75,
-        blend_color = "#000000",
-        update_in_insert = {
-          enable = true,
-          delay = 100,
-        },
-        hide = {
-          virtual_text = true,
-          signs = true,
-          underline = true,
-        },
-      })
-    end,
-  },
+  -- {
+  --   "zbirenbaum/neodim",
+  --   event = "LspAttach",
+  --   config = function()
+  --     require("neodim").setup({
+  --       alpha = 0.75,
+  --       blend_color = "#000000",
+  --       update_in_insert = {
+  --         enable = true,
+  --         delay = 100,
+  --       },
+  --       hide = {
+  --         virtual_text = true,
+  --         signs = true,
+  --         underline = true,
+  --       },
+  --     })
+  --   end,
+  -- },
 
   -- floating winbar
   {
