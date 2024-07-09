@@ -16,12 +16,12 @@ return {
         nls_formatting.buf.with(require("plugins.extras.lsp.null-ls.formatting.buf")),
       }
       if type(opts.sources) == "table" then
-        opts.sources = vim.list_extend(opts.sources, diagnostics)
-        opts.sources = vim.list_extend(opts.sources, formatting)
+        -- opts.sources = vim.list_extend(opts.sources, diagnostics)
+        -- opts.sources = vim.list_extend(opts.sources, formatting)
       end
 
       -- builtins are loaded here
-      table.insert(opts.sources, nls.builtins.formatting.prettierd)
+      -- table.insert(opts.sources, nls.builtins.formatting.prettierd)
       opts.debug = true
     end,
   },
