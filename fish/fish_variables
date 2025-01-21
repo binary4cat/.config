@@ -3,7 +3,7 @@
 SETUVAR --export EDITOR:nvim
 SETUVAR GLFW_IM_MODULE:DEFAULT\x3dibus
 SETUVAR --export GO111MODULE:on
-SETUVAR --export GOPRIVATE:devgit\x2estarschina\x2ecom/\x2a
+SETUVAR --export GOPRIVATE:devgit\x2estarschina\x2ecom/\x2a\x2cgitee\x2ecom/Is2/\x2a
 SETUVAR --export GOPROXY:https\x3a//goproxy\x2ecn\x2cdirect
 SETUVAR GTK_IM_MODULE:DEFAULT\x3dfcitx
 SETUVAR INPUT_METHOD:DEFAULT\x3dfcitx

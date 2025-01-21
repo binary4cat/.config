@@ -19,7 +19,7 @@ set AWT_TOOLKIT MToolkit
 # golang
 set GO111MODULE on
 set GOPROXY "https://goproxy.cn,direct"
-set GOPRIVATE "devgit.starschina.com/*"
+set GOPRIVATE "devgit.starschina.com/*,gitee.com/Is2/*"
 
 ## npm
 set NPM_CONFIG_PREFIX ~/.npm-global
