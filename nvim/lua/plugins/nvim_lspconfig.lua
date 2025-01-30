@@ -2,18 +2,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
-      local server_opts = {
-        -- The LSP server configuration that needs to be configured is loaded here
-        bufls = require("plugins.extras.lsp.server.bufls"),
-        -- clangd = require("plugins.extras.lsp.server.clangd"),
-      }
-      if type(opts.servers) == "table" then
-        opts.servers = vim.list_extend(opts.servers, server_opts)
-      end
-
-      -- builtin gopls servers
-      opts.servers.gopls.settings.gopls.usePlaceholders = false
-
       -- lsp timeout error
       opts.format.timeout_ms = 10000
 
